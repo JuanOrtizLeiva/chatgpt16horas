@@ -1,0 +1,1488 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Arte de Crear Prompts Efectivos para Tareas Administrativas</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta name="description" content="Aprende a crear prompts claros y efectivos para obtener respuestas precisas de ChatGPT en contextos administrativos y de oficina.">
+    <style>
+        :root {
+            /* Paleta de colores - Combo C */
+            --color-primario: #0A4A9D;
+            --color-primario-grad: #3B77C6;
+            --color-acento-1: #FFC107;
+            --color-acento-2: #495057;
+            --color-texto: #212529;
+            --color-fondo: #FFFFFF;
+            --color-fondo-alt: #F1F3F5;
+            --color-blanco: #FFFFFF;
+            
+            /* Espaciado */
+            --spacing-xs: 0.5rem;
+            --spacing-sm: 1rem;
+            --spacing-md: 1.5rem;
+            --spacing-lg: 2rem;
+            --spacing-xl: 3rem;
+            --spacing-xxl: 5rem;
+            
+            /* Bordes y sombras */
+            --border-radius-sm: 4px;
+            --border-radius-md: 8px;
+            --border-radius-lg: 12px;
+            --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+            --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 6px 16px rgba(0, 0, 0, 0.1);
+            
+            /* Transiciones */
+            --transition-fast: 0.2s ease;
+            --transition-normal: 0.3s ease;
+            --transition-slow: 0.5s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--color-texto);
+            background-color: var(--color-fondo);
+            padding: 0;
+            margin: 0;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: var(--spacing-md);
+        }
+        
+        /* Encabezado de sección */
+        .section-header {
+            background: linear-gradient(135deg, var(--color-primario), var(--color-primario-grad));
+            color: var(--color-blanco);
+            padding: var(--spacing-lg) var(--spacing-md);
+            border-radius: var(--border-radius-md);
+            margin-bottom: var(--spacing-xl);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .section-header h1 {
+            font-size: 2.2rem;
+            margin-bottom: var(--spacing-sm);
+            font-weight: 700;
+        }
+        
+        .section-header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 800px;
+        }
+        
+        /* Introducción destacada */
+        .intro-highlight {
+            font-size: 1.4rem;
+            font-weight: 300;
+            line-height: 1.8;
+            color: var(--color-texto);
+            background-color: var(--color-fondo-alt);
+            padding: var(--spacing-lg);
+            border-radius: var(--border-radius-md);
+            margin-bottom: var(--spacing-xl);
+            border-left: 5px solid var(--color-acento-1);
+        }
+        
+        /* Secciones de contenido */
+        .content-section {
+            margin-bottom: var(--spacing-xl);
+        }
+        
+        .content-section h2 {
+            font-size: 1.8rem;
+            color: var(--color-primario);
+            margin-bottom: var(--spacing-md);
+            padding-bottom: var(--spacing-xs);
+            border-bottom: 2px solid var(--color-primario-grad);
+        }
+        
+        .content-section h3 {
+            font-size: 1.4rem;
+            color: var(--color-texto);
+            margin: var(--spacing-md) 0 var(--spacing-sm);
+        }
+        
+        .content-section p {
+            margin-bottom: var(--spacing-md);
+            font-size: 1.05rem;
+        }
+        
+        .content-section ul, .content-section ol {
+            margin-bottom: var(--spacing-md);
+            padding-left: var(--spacing-xl);
+            width: 85%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .content-section li {
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        /* Citas destacadas */
+        .quote-box {
+            background-color: var(--color-fondo-alt);
+            border-left: 5px solid var(--color-acento-1);
+            padding: var(--spacing-lg);
+            margin: var(--spacing-lg) 0;
+            border-radius: var(--border-radius-md);
+            font-style: italic;
+            position: relative;
+        }
+        
+        .quote-box::before {
+            content: '\201C';
+            font-size: 4rem;
+            font-family: Georgia, serif;
+            color: var(--color-acento-1);
+            opacity: 0.3;
+            position: absolute;
+            top: -10px;
+            left: 10px;
+        }
+        
+        .quote-content {
+            margin-left: var(--spacing-lg);
+            font-size: 1.2rem;
+            line-height: 1.8;
+        }
+        
+        .quote-author {
+            margin-top: var(--spacing-md);
+            text-align: right;
+            font-weight: 600;
+            font-style: normal;
+            color: var(--color-acento-2);
+        }
+        
+        /* Comparador de prompts */
+        .prompt-comparison {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--spacing-lg);
+            margin: var(--spacing-xl) 0;
+        }
+        
+        .prompt-card {
+            flex: 1;
+            min-width: 300px;
+            background-color: var(--color-fondo);
+            border-radius: var(--border-radius-md);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: transform var(--transition-normal);
+        }
+        
+        .prompt-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .prompt-header {
+            padding: var(--spacing-md);
+            background-color: var(--color-acento-2);
+            color: var(--color-blanco);
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+        }
+        
+        .prompt-header i {
+            margin-right: var(--spacing-sm);
+        }
+        
+        .advanced-prompt .prompt-header {
+            background-color: var(--color-acento-1);
+            color: var(--color-texto);
+        }
+        
+        .prompt-content {
+            padding: var(--spacing-md);
+            border: 1px solid #e0e0e0;
+            border-top: none;
+            background-color: var(--color-fondo);
+        }
+        
+        .prompt-text {
+            font-family: monospace;
+            padding: var(--spacing-md);
+            background-color: var(--color-fondo-alt);
+            border-radius: var(--border-radius-sm);
+            margin-bottom: var(--spacing-md);
+            white-space: pre-wrap;
+        }
+        
+        .prompt-result {
+            background-color: #f8f9fa;
+            padding: var(--spacing-md);
+            border-radius: var(--border-radius-sm);
+            border-left: 4px solid var(--color-primario);
+        }
+        
+        .prompt-result h4 {
+            color: var(--color-primario);
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        /* Table */
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: var(--spacing-lg) 0;
+            background-color: var(--color-fondo);
+            box-shadow: var(--shadow-md);
+            border-radius: var(--border-radius-md);
+            overflow: hidden;
+        }
+        
+        .comparison-table th {
+            background-color: var(--color-primario);
+            color: var(--color-blanco);
+            padding: var(--spacing-sm);
+            text-align: left;
+        }
+        
+        .comparison-table td {
+            padding: var(--spacing-sm);
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .comparison-table tr:nth-child(even) {
+            background-color: var(--color-fondo-alt);
+        }
+        
+        .comparison-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        /* Imagen antes/después */
+        .before-after-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin: var(--spacing-xl) auto;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            border-radius: var(--border-radius-md);
+        }
+        
+        .before-after-slider {
+            position: absolute;
+            z-index: 9;
+            cursor: ew-resize;
+            width: 40px;
+            height: 40px;
+            background-color: var(--color-acento-1);
+            border-radius: 50%;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-texto);
+            font-weight: bold;
+            box-shadow: var(--shadow-md);
+        }
+        
+        .before-after-slider::before, .before-after-slider::after {
+            content: '';
+            position: absolute;
+            width: 2px;
+            height: 16px;
+            background-color: var(--color-texto);
+        }
+        
+        .before-after-slider::before {
+            left: 12px;
+        }
+        
+        .before-after-slider::after {
+            right: 12px;
+        }
+        
+        .before-image, .after-image {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .after-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 50%;
+            height: 100%;
+            overflow: hidden;
+        }
+        
+        .after-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 200%;
+        }
+        
+        .comparison-label {
+            position: absolute;
+            top: 20px;
+            padding: var(--spacing-xs) var(--spacing-md);
+            color: var(--color-blanco);
+            font-weight: bold;
+            background-color: rgba(0, 0, 0, 0.6);
+            border-radius: var(--border-radius-md);
+        }
+        
+        .before-label {
+            right: 20px;
+        }
+        
+        .after-label {
+            left: 20px;
+        }
+        
+        /* Galería de imágenes carrusel */
+        .carousel-container {
+            width: 100%;
+            margin: var(--spacing-xl) auto;
+            position: relative;
+            overflow: hidden;
+            border-radius: var(--border-radius-md);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .carousel-track {
+            display: flex;
+            transition: transform var(--transition-normal);
+        }
+        
+        .carousel-slide {
+            flex: 0 0 100%;
+            position: relative;
+        }
+        
+        .carousel-image {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .carousel-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: var(--color-blanco);
+            padding: var(--spacing-md);
+        }
+        
+        .carousel-nav {
+            display: flex;
+            justify-content: center;
+            margin-top: var(--spacing-sm);
+        }
+        
+        .carousel-indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: var(--color-acento-2);
+            margin: 0 var(--spacing-xs);
+            cursor: pointer;
+            transition: background-color var(--transition-fast);
+        }
+        
+        .carousel-indicator.active {
+            background-color: var(--color-acento-1);
+        }
+        
+        .carousel-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.3);
+            color: var(--color-blanco);
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            z-index: 10;
+        }
+        
+        .carousel-button:hover {
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        
+        .carousel-button.prev {
+            left: 10px;
+        }
+        
+        .carousel-button.next {
+            right: 10px;
+        }
+        
+        /* Tarjetas de técnicas */
+        .techniques-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: var(--spacing-md);
+            margin: var(--spacing-xl) 0;
+        }
+        
+        .technique-card {
+            background-color: var(--color-fondo);
+            border-radius: var(--border-radius-md);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            border-top: 4px solid var(--color-acento-1);
+            transition: transform var(--transition-fast);
+        }
+        
+        .technique-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .technique-content {
+            padding: var(--spacing-md);
+        }
+        
+        .technique-title {
+            display: flex;
+            align-items: center;
+            margin-bottom: var(--spacing-sm);
+            color: var(--color-primario);
+        }
+        
+        .technique-title i {
+            margin-right: var(--spacing-sm);
+            color: var(--color-acento-1);
+        }
+        
+        .technique-description {
+            margin-bottom: var(--spacing-sm);
+            font-size: 0.95rem;
+        }
+        
+        .technique-example {
+            background-color: var(--color-fondo-alt);
+            padding: var(--spacing-sm);
+            border-radius: var(--border-radius-sm);
+            font-family: monospace;
+            font-size: 0.9rem;
+            white-space: pre-wrap;
+        }
+        
+        /* Ejercicio interactivo */
+        .exercise-container {
+            background-color: var(--color-fondo-alt);
+            border-radius: var(--border-radius-md);
+            padding: var(--spacing-lg);
+            margin: var(--spacing-xl) 0;
+            box-shadow: var(--shadow-md);
+            border-left: 5px solid var(--color-acento-1);
+        }
+        
+        .exercise-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .exercise-icon {
+            font-size: 1.8rem;
+            color: var(--color-acento-1);
+            margin-right: var(--spacing-sm);
+        }
+        
+        .exercise-title {
+            font-size: 1.5rem;
+            color: var(--color-primario);
+            font-weight: 600;
+        }
+        
+        .exercise-description {
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .prompt-editor {
+            width: 100%;
+            padding: var(--spacing-md);
+            background-color: var(--color-fondo);
+            border: 1px solid #ddd;
+            border-radius: var(--border-radius-sm);
+            font-family: monospace;
+            min-height: 150px;
+            margin-bottom: var(--spacing-md);
+            resize: vertical;
+        }
+        
+        .exercise-buttons {
+            display: flex;
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .exercise-btn {
+            padding: var(--spacing-sm) var(--spacing-lg);
+            border-radius: var(--border-radius-sm);
+            font-weight: 600;
+            cursor: pointer;
+            border: none;
+            transition: background-color var(--transition-fast);
+        }
+        
+        .check-btn {
+            background-color: var(--color-acento-1);
+            color: var(--color-texto);
+        }
+        
+        .check-btn:hover {
+            background-color: #e6ad00;
+        }
+        
+        .reset-btn {
+            background-color: var(--color-acento-2);
+            color: var(--color-blanco);
+        }
+        
+        .reset-btn:hover {
+            background-color: #383d41;
+        }
+        
+        .exercise-feedback {
+            padding: var(--spacing-md);
+            border-radius: var(--border-radius-sm);
+            display: none;
+        }
+        
+        .feedback-positive {
+            background-color: rgba(40, 167, 69, 0.1);
+            border-left: 4px solid #28a745;
+        }
+        
+        .feedback-neutral {
+            background-color: rgba(255, 193, 7, 0.1);
+            border-left: 4px solid var(--color-acento-1);
+        }
+        
+        /* Estudio de Caso */
+        .case-study-container {
+            background-color: var(--color-fondo);
+            border-radius: var(--border-radius-md);
+            padding: var(--spacing-lg);
+            margin: var(--spacing-xl) 0;
+            box-shadow: var(--shadow-md);
+            border-left: 5px solid var(--color-primario);
+        }
+        
+        .case-study-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .case-study-icon {
+            font-size: 1.8rem;
+            color: var(--color-primario);
+            margin-right: var(--spacing-sm);
+        }
+        
+        .case-study-title {
+            font-size: 1.5rem;
+            color: var(--color-primario);
+            font-weight: 600;
+        }
+        
+        .case-study-content p {
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .case-prompt {
+            background-color: var(--color-fondo-alt);
+            padding: var(--spacing-md);
+            border-radius: var(--border-radius-sm);
+            margin-bottom: var(--spacing-md);
+            font-family: monospace;
+            white-space: pre-wrap;
+        }
+        
+        .case-success {
+            border-left: 4px solid #28a745;
+            padding-left: var(--spacing-sm);
+        }
+        
+        .case-failure {
+            border-left: 4px solid #dc3545;
+            padding-left: var(--spacing-sm);
+        }
+        
+        /* Ejemplo contextualizado */
+        .example-container {
+            background-color: var(--color-blanco);
+            border-radius: var(--border-radius-md);
+            padding: var(--spacing-lg);
+            margin: var(--spacing-xl) 0;
+            box-shadow: var(--shadow-md);
+            border-left: 5px solid var(--color-acento-1);
+        }
+        
+        .example-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .example-icon {
+            font-size: 1.8rem;
+            color: var(--color-acento-1);
+            margin-right: var(--spacing-sm);
+        }
+        
+        .example-title {
+            font-size: 1.3rem;
+            color: var(--color-primario);
+            font-weight: 600;
+        }
+        
+        .chile-flag {
+            width: 24px;
+            margin-left: var(--spacing-sm);
+            vertical-align: middle;
+        }
+        
+        /* Transición siguiente sección */
+        .next-section-transition {
+            background: linear-gradient(to right, var(--color-fondo-alt), var(--color-blanco));
+            padding: var(--spacing-lg);
+            border-radius: var(--border-radius-md);
+            margin-top: var(--spacing-xl);
+            border-left: 5px solid var(--color-acento-1);
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+        
+        /* Multimedia */
+        .image-container {
+            margin: var(--spacing-lg) 0;
+            text-align: center;
+        }
+        
+        .image-center {
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+        }
+        
+        .content-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: var(--border-radius-md);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .image-caption {
+            margin-top: var(--spacing-sm);
+            color: var(--color-acento-2);
+            text-align: center;
+            padding: 0 var(--spacing-lg);
+        }
+        
+        /* Responsive */
+        @media (max-width: 992px) {
+            .prompt-comparison {
+                flex-direction: column;
+            }
+            
+            .techniques-container {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .section-header h1 {
+                font-size: 1.8rem;
+            }
+            
+            .intro-highlight {
+                font-size: 1.2rem;
+            }
+            
+            .content-section h2 {
+                font-size: 1.5rem;
+            }
+            
+            .content-section h3 {
+                font-size: 1.3rem;
+            }
+            
+            .techniques-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .carousel-caption {
+                padding: var(--spacing-sm);
+            }
+            
+            .content-section ul, .content-section ol {
+                width: 95%;
+                padding-left: var(--spacing-lg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Encabezado de sección -->
+        <header class="section-header">
+            <h1>El Arte de Crear Prompts Efectivos para Tareas Administrativas</h1>
+            <p>Domina las técnicas para comunicarte con ChatGPT de manera efectiva y obtén respuestas precisas que transformen tu productividad en el entorno laboral.</p>
+        </header>
+        
+        <!-- Introducción destacada -->
+        <div class="intro-highlight">
+            El secreto para obtener resultados excepcionales de ChatGPT no está en la herramienta misma, sino en cómo le comunicas tus necesidades. Un buen prompt es como una llave maestra que desbloquea todo el potencial de la IA para tus tareas administrativas.
+        </div>
+        
+        <!-- Contenido principal -->
+        <section class="content-section">
+            <h2>El Poder de los Prompts: La Base del Éxito con ChatGPT</h2>
+            
+            <p>En el mundo de la inteligencia artificial, particularmente con modelos como ChatGPT, la calidad de lo que obtenemos está directamente relacionada con la calidad de lo que solicitamos. Esta relación es incluso más crítica que en las interacciones humanas, donde el contexto, las expresiones no verbales y el conocimiento compartido facilitan la comunicación.</p>
+            
+            <div class="quote-box">
+                <div class="quote-content">La diferencia entre un profesional que simplemente "usa" ChatGPT y uno que realmente lo aprovecha al máximo radica casi exclusivamente en su habilidad para formular prompts efectivos.</div>
+                <div class="quote-author">— María Vásquez, Experta en Transformación Digital</div>
+            </div>
+            
+            <p>Un "prompt" es, en esencia, la instrucción o consulta que le proporcionamos a ChatGPT. Sin embargo, va mucho más allá de una simple pregunta. Un prompt bien diseñado incluye contexto, especifica el formato deseado, establece el tono y proporciona ejemplos cuando es necesario. Es fundamentalmente un conjunto de instrucciones que guían a la IA hacia el resultado exacto que necesitamos.</p>
+            
+            <h3>¿Por qué son tan importantes los prompts en el ámbito administrativo?</h3>
+            
+            <p>En el contexto de las tareas administrativas, donde la precisión, la estructura y el formato adecuado son esenciales, la creación de prompts efectivos se vuelve particularmente crucial por las siguientes razones:</p>
+            
+            <ul>
+                <li><strong>Eficiencia temporal:</strong> Un prompt bien formulado puede reducir el número de interacciones necesarias para obtener el resultado deseado, ahorrando minutos valiosos que, a lo largo de la semana, se transforman en horas.</li>
+                <li><strong>Precisión en los resultados:</strong> La claridad en nuestras instrucciones se traduce directamente en la exactitud del output, fundamental cuando trabajamos con información financiera, calendarios, o comunicaciones oficiales.</li>
+                <li><strong>Adaptación al contexto:</strong> Los entornos administrativos tienen terminología, regulaciones y formatos específicos que varían según la industria, la región e incluso la empresa. Un buen prompt permite contextualizar estas particularidades.</li>
+                <li><strong>Consistencia:</strong> Prompts estandarizados para tareas recurrentes garantizan resultados homogéneos, especialmente importantes en entornos donde múltiples colaboradores utilizan la misma herramienta.</li>
+                <li><strong>Aprovechamiento de recursos:</strong> Las versiones gratuitas de ChatGPT tienen limitaciones en el número de interacciones y en la longitud de las conversaciones, haciendo aún más valioso obtener buenos resultados con menos intercambios.</li>
+            </ul>
+            
+            <div class="image-container image-center">
+                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80" alt="Profesional escribiendo prompts efectivos para ChatGPT" class="content-image" loading="lazy">
+                <div class="image-caption">
+                    <p>La creación de prompts efectivos es una habilidad que todo profesional administrativo moderno debe dominar</p>
+                    <span class="image-source">Imagen representativa - Abril 2025</span>
+                </div>
+            </div>
+        </section>
+        
+        <section class="content-section">
+            <h2>Anatomía de un Prompt Efectivo: Elementos Fundamentales</h2>
+            
+            <p>Para dominar el arte de crear prompts efectivos, es esencial comprender los componentes clave que los conforman. Cada uno de estos elementos cumple una función específica y, en conjunto, potencian significativamente la calidad de las respuestas que obtendrás de ChatGPT:</p>
+            
+            <div class="techniques-container">
+                <div class="technique-card">
+                    <div class="technique-content">
+                        <h3 class="technique-title"><i class="fas fa-user-tie"></i> Rol y Contexto</h3>
+                        <p class="technique-description">Establecer un "rol" para ChatGPT ayuda a enfocar sus respuestas y acceder a conocimientos específicos. El contexto proporciona el marco situacional.</p>
+                        <div class="technique-example">Actúa como un asistente administrativo especializado en finanzas corporativas para una empresa chilena del sector retail.</div>
+                    </div>
+                </div>
+                
+                <div class="technique-card">
+                    <div class="technique-content">
+                        <h3 class="technique-title"><i class="fas fa-tasks"></i> Tarea Específica</h3>
+                        <p class="technique-description">Define claramente qué necesitas que haga ChatGPT, evitando ambigüedades y siendo preciso en tu solicitud.</p>
+                        <div class="technique-example">Necesito generar un correo de seguimiento formal para un cliente que no ha respondido a nuestra propuesta comercial en los últimos 15 días.</div>
+                    </div>
+                </div>
+                
+                <div class="technique-card">
+                    <div class="technique-content">
+                        <h3 class="technique-title"><i class="fas fa-file-alt"></i> Formato Deseado</h3>
+                        <p class="technique-description">Especifica exactamente cómo quieres recibir la información: estructura, longitud, estilos, etc.</p>
+                        <div class="technique-example">El correo debe tener: 1) Un asunto claro, 2) Saludo formal, 3) Párrafo recordatorio, 4) Párrafo de valor, 5) Llamado a la acción, 6) Despedida corporativa. Extensión máxima: 200 palabras.</div>
+                    </div>
+                </div>
+                
+                <div class="technique-card">
+                    <div class="technique-content">
+                        <h3 class="technique-title"><i class="fas fa-info-circle"></i> Información Relevante</h3>
+                        <p class="technique-description">Proporciona datos contextuales necesarios para una respuesta adecuada, evitando omisiones críticas.</p>
+                        <div class="technique-example">Datos importantes: Cliente: Constructora Andina S.A., Contacto: Sr. Roberto Fuentes (Gerente de Operaciones), Propuesta: Implementación de sistema ERP valorada en $35.000.000 CLP, Última comunicación: 23 de marzo 2025.</div>
+                    </div>
+                </div>
+                
+                <div class="technique-card">
+                    <div class="technique-content">
+                        <h3 class="technique-title"><i class="fas fa-language"></i> Tono y Estilo</h3>
+                        <p class="technique-description">Define el registro lingüístico, nivel de formalidad y enfoque emocional de la comunicación.</p>
+                        <div class="technique-example">Utiliza un tono formal pero cordial, profesional sin ser distante, y orientado a soluciones. Evita lenguaje que pueda interpretarse como presión comercial.</div>
+                    </div>
+                </div>
+                
+                <div class="technique-card">
+                    <div class="technique-content">
+                        <h3 class="technique-title"><i class="fas fa-thumbs-up"></i> Ejemplos Ilustrativos</h3>
+                        <p class="technique-description">Proporciona modelos o referencias que ilustren el tipo de resultado que esperas recibir.</p>
+                        <div class="technique-example">Un buen párrafo inicial sería similar a: "Esperamos que esta comunicación le encuentre bien. Nos ponemos en contacto en seguimiento a la propuesta de implementación del sistema ERP presentada el pasado 23 de marzo, sobre la cual aún no hemos recibido sus comentarios..."</div>
+                    </div>
+                </div>
+                
+                <div class="technique-card">
+                    <div class="technique-content">
+                        <h3 class="technique-title"><i class="fas fa-list-ol"></i> Pasos a Seguir</h3>
+                        <p class="technique-description">Estructura tu prompt en pasos secuenciales para tareas complejas o que requieren un proceso.</p>
+                        <div class="technique-example">1) Analiza primero la situación del cliente, 2) Propón un enfoque para recuperar su interés, 3) Desarrolla el correo según el formato indicado, 4) Sugiere 2-3 posibles fechas para una reunión de seguimiento.</div>
+                    </div>
+                </div>
+                
+                <div class="technique-card">
+                    <div class="technique-content">
+                        <h3 class="technique-title"><i class="fas fa-ban"></i> Restricciones</h3>
+                        <p class="technique-description">Establece límites claros sobre lo que NO debe incluirse en la respuesta o cómo NO debe enfocarse.</p>
+                        <div class="technique-example">Evita mencionar descuentos o modificaciones al precio original, no utilices jerga técnica excesiva, y no incluyas información sobre competidores.</div>
+                    </div>
+                </div>
+            </div>
+            
+            <h3>La estructura óptima para prompts administrativos</h3>
+            
+            <p>Si bien cada situación puede requerir énfasis en diferentes elementos, existe una estructura general que funciona excepcionalmente bien para la mayoría de las tareas administrativas:</p>
+            
+            <ol>
+                <li><strong>Presentación del contexto:</strong> Comienza estableciendo el escenario general (empresa, sector, situación).</li>
+                <li><strong>Asignación de rol:</strong> Define qué papel debe asumir ChatGPT para enmarcar sus conocimientos.</li>
+                <li><strong>Descripción específica de la tarea:</strong> Explica claramente qué necesitas que haga.</li>
+                <li><strong>Provisión de información clave:</strong> Proporciona todos los datos relevantes para cumplir la tarea.</li>
+                <li><strong>Especificación de formato y estilo:</strong> Detalla cómo quieres recibir el resultado.</li>
+                <li><strong>Establecimiento de restricciones:</strong> Aclara lo que debe evitarse.</li>
+                <li><strong>Solicitud de verificación:</strong> Pide a ChatGPT que revise su respuesta contra tus criterios.</li>
+            </ol>
+            
+            <div class="image-container image-center">
+                <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=800&q=80" alt="Anatomía de un prompt efectivo para tareas administrativas" class="content-image" loading="lazy">
+                <div class="image-caption">
+                    <p>La estructura adecuada de un prompt garantiza respuestas precisas y útiles</p>
+                    <span class="image-source">Basado en mejores prácticas 2025</span>
+                </div>
+            </div>
+        </section>
+        
+        <section class="content-section">
+            <h2>Prompts Básicos vs. Avanzados: Una Comparación Reveladora</h2>
+            
+            <p>Para entender realmente el impacto que tiene la calidad de un prompt en el resultado obtenido, nada mejor que analizar ejemplos comparativos en escenarios administrativos reales. Veamos cómo evoluciona una misma solicitud desde una formulación básica hasta una avanzada:</p>
+            
+            <div class="prompt-comparison">
+                <div class="prompt-card basic-prompt">
+                    <div class="prompt-header">
+                        <i class="fas fa-level-down-alt"></i> Prompt Básico
+                    </div>
+                    <div class="prompt-content">
+                        <div class="prompt-text">Escribe un email para anunciar la nueva política de vacaciones de la empresa.</div>
+                        <div class="prompt-result">
+                            <h4>Resultado:</h4>
+                            <p>Un correo genérico que podría aplicar a cualquier empresa, sin formato específico, tono inconsistente y con información incompleta que requeriría múltiples iteraciones para ser realmente útil.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="prompt-card advanced-prompt">
+                    <div class="prompt-header">
+                        <i class="fas fa-level-up-alt"></i> Prompt Avanzado
+                    </div>
+                    <div class="prompt-content">
+                        <div class="prompt-text">Actúa como Director de Recursos Humanos de TechSantiago, una empresa de software chilena con 120 empleados.
+
+Necesito que redactes un correo electrónico formal para anunciar nuestra nueva política de vacaciones que entrará en vigor el 1 de mayo de 2025.
+
+Detalles importantes:
+- Aumento de días libres anuales de 15 a 20 días hábiles
+- Nuevo sistema de solicitud a través de la plataforma WorkDay
+- Anticipación mínima de 15 días para solicitudes
+- Posibilidad de fraccionar vacaciones en máximo 3 períodos
+- Requisito de tomar al menos 10 días consecutivos una vez al año
+
+Estructura requerida:
+1. Asunto del correo claro y conciso
+2. Saludo corporativo
+3. Párrafo introductorio anunciando la nueva política
+4. Lista con viñetas de los cambios principales
+5. Párrafo explicando el porqué del cambio (mejora de bienestar)
+6. Instrucciones para el nuevo sistema de solicitud
+7. Fecha de sesión informativa: 28 de abril, 15:00 hrs
+8. Cierre y firma como "Carolina Méndez, Directora de RRHH"
+
+Tono: Profesional pero cercano, entusiasta sobre los beneficios para los empleados, claro en cuanto a los procedimientos.
+
+Extensión: Máximo 350 palabras.</div>
+                        <div class="prompt-result">
+                            <h4>Resultado:</h4>
+                            <p>Un correo electrónico completamente adaptado al contexto de la empresa chilena, con formato estructurado, tono consistente, información específica y completa, listo para usar sin necesidad de ajustes adicionales.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <h3>Las diferencias críticas que hacen la diferencia</h3>
+            
+            <p>Como podemos observar en el ejemplo anterior, existen diferencias sustanciales entre un prompt básico y uno avanzado que afectan directamente la calidad y utilidad del resultado:</p>
+            
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Aspecto</th>
+                        <th>Prompt Básico</th>
+                        <th>Prompt Avanzado</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Contexto</strong></td>
+                        <td>Inexistente o mínimo</td>
+                        <td>Completo y relevante para la tarea</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Especificidad</strong></td>
+                        <td>Vaga y abierta a interpretación</td>
+                        <td>Precisa y detallada</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Estructura</strong></td>
+                        <td>Sin estructura definida</td>
+                        <td>Organizada y secuencial</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Información</strong></td>
+                        <td>Insuficiente para la tarea</td>
+                        <td>Completa y relevante</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Formato</strong></td>
+                        <td>No especificado</td>
+                        <td>Claramente definido</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Tono</strong></td>
+                        <td>Indefinido</td>
+                        <td>Claramente establecido</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Adaptación local</strong></td>
+                        <td>Genérica</td>
+                        <td>Adaptada al contexto chileno</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Iteraciones necesarias</strong></td>
+                        <td>Múltiples</td>
+                        <td>Mínimas o ninguna</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Tiempo para resultado final</strong></td>
+                        <td>Largo (múltiples ajustes)</td>
+                        <td>Inmediato (listo para usar)</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <p>Este análisis comparativo demuestra claramente que invertir tiempo en formular un prompt completo y bien estructurado no solo mejora la calidad del resultado, sino que también ahorra tiempo significativo a largo plazo, evitando múltiples iteraciones y ajustes posteriores.</p>
+        </section>
+        
+        <section class="content-section">
+            <h2>Técnicas Avanzadas para Prompts Administrativos</h2>
+            
+            <p>Una vez dominados los elementos básicos, existen técnicas más sofisticadas que pueden elevar aún más tus interacciones con ChatGPT, especialmente para tareas administrativas complejas:</p>
+            
+            <h3>1. Prompting por Cadena de Pensamiento (Chain-of-Thought)</h3>
+            
+            <p>Esta técnica consiste en solicitar a ChatGPT que desglose paso a paso su razonamiento antes de ofrecer una conclusión. Es particularmente útil para análisis financieros, planificación de proyectos o cualquier tarea que requiera un proceso lógico secuencial.</p>
+            
+            <div class="quote-box">
+                <div class="quote-content">Analiza la viabilidad de implementar un sistema de gestión documental en nuestra empresa considerando un presupuesto de $15.000.000 CLP. Desarrolla tu análisis evaluando los costos iniciales, gastos operativos mensuales, tiempo de implementación, retorno de inversión y riesgos potenciales. Para cada punto, muestra tu razonamiento paso a paso antes de ofrecer una conclusión.</div>
+            </div>
+            
+            <h3>2. Prompting con Ejemplos (Few-Shot Learning)</h3>
+            
+            <p>Proporcionar ejemplos concretos del tipo de respuesta que esperas recibir mejora significativamente la precisión y relevancia del resultado. Esta técnica es especialmente valiosa cuando necesitas que ChatGPT adopte un estilo específico o siga un formato particular.</p>
+            
+            <div class="quote-box">
+                <div class="quote-content">Necesito generar respuestas estandarizadas para las cinco consultas más frecuentes de nuestros clientes sobre facturación electrónica. A continuación te muestro un ejemplo del formato y tono que busco:
+
+Pregunta: "¿Cómo puedo solicitar una copia de mi factura del mes anterior?"
+Respuesta: "Estimado cliente, para obtener una copia de su factura anterior, le ofrecemos dos opciones sencillas: 1) Descarga directa desde su cuenta en nuestro portal web (www.empresa.cl/misdocumentos), o 2) Envío de una solicitud a facturacion@empresa.cl indicando su RUT y número de cliente. El documento será enviado en formato PDF a su correo registrado en un plazo máximo de 24 horas hábiles. ¿Necesita asistencia adicional con este proceso?"
+
+Ahora, genera respuestas para las siguientes consultas manteniendo el mismo estilo, formato y nivel de detalle:
+1. "¿Por qué el monto de mi factura es diferente al mes anterior?"
+2. "¿Cómo puedo actualizar mis datos de facturación?"
+...</div>
+            </div>
+            
+            <h3>3. Prompting con Retroalimentación Iterativa</h3>
+            
+            <p>Esta técnica implica un proceso de refinamiento progresivo donde proporcionas retroalimentación específica sobre la respuesta inicial para mejorarla en iteraciones sucesivas. Es especialmente útil para documentos importantes o comunicaciones de alto impacto.</p>
+            
+            <div class="quote-box">
+                <div class="quote-content">Necesito redactar una propuesta de mejora de procesos para presentar a la gerencia. En lugar de pedirte la propuesta completa de una vez, trabajaremos por etapas:
+
+1. Primero, genera un esquema detallado de los componentes que debería tener esta propuesta.
+2. Revisaré y ajustaré ese esquema.
+3. Luego, desarrolla la introducción y justificación según el esquema aprobado.
+4. Finalmente, tras mi revisión, completaremos el resto de secciones una por una.</div>
+            </div>
+            
+            <h3>4. Prompting con Restricciones Específicas</h3>
+            
+            <p>Establecer limitaciones claras y específicas puede mejorar notablemente la precisión y relevancia de las respuestas, especialmente en entornos profesionales con requisitos estrictos.</p>
+            
+            <div class="quote-box">
+                <div class="quote-content">Redacta un correo para proveedores sobre nuestro nuevo proceso de recepción de facturas. Restricciones obligatorias:
+- No debe exceder 250 palabras
+- Debe incluir únicamente información sobre el proceso (no mencionar otros cambios)
+- Debe cumplir con la Ley 21.131 sobre pago a 30 días
+- No debe contener jerga técnica o términos difíciles de entender
+- No debe prometer plazos de pago menores a los establecidos por ley</div>
+            </div>
+            
+            <div class="image-container image-center">
+                <img src="https://images.unsplash.com/photo-1503551723145-6c040742065b?auto=format&fit=crop&w=800&q=80" alt="Técnicas avanzadas de prompting para profesionales" class="content-image" loading="lazy">
+                <div class="image-caption">
+                    <p>Las técnicas avanzadas de prompting permiten obtener resultados de calidad profesional</p>
+                    <span class="image-source">Fuente: Estudios de productividad con IA - 2025</span>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Ejercicio interactivo -->
+        <div class="exercise-container">
+            <div class="exercise-header">
+                <div class="exercise-icon">
+                    <i class="fas fa-pen-fancy"></i>
+                </div>
+                <div class="exercise-title">Ejercicio de Aplicación: Transformación de Prompts</div>
+            </div>
+            
+            <div class="exercise-description">
+                <p>Veamos cómo mejorar un prompt básico para maximizar la utilidad de ChatGPT en tu contexto laboral. A continuación te presentamos un prompt básico para una tarea administrativa común. Tu desafío es transformarlo en un prompt avanzado aplicando las técnicas que has aprendido.</p>
+            </div>
+            
+            <h4>Prompt Básico Original:</h4>
+            <div class="prompt-text">Ayúdame a crear una presentación sobre el desempeño trimestral del departamento.</div>
+            
+            <h4>Transforma el prompt usando las técnicas aprendidas:</h4>
+            <textarea id="advanced-prompt" class="prompt-editor" placeholder="Escribe aquí tu versión mejorada del prompt..."></textarea>
+            
+            <div class="exercise-buttons">
+                <button id="check-btn" class="exercise-btn check-btn">Verificar Prompt</button>
+                <button id="reset-btn" class="exercise-btn reset-btn">Reiniciar</button>
+            </div>
+            
+            <div id="exercise-feedback" class="exercise-feedback"></div>
+            
+            <div class="exercise-tips">
+                <h4>Consejos para la transformación:</h4>
+                <ul>
+                    <li>Añade un contexto específico (empresa, departamento, sector)</li>
+                    <li>Especifica un rol para ChatGPT</li>
+                    <li>Incluye datos concretos (período, métricas, objetivos)</li>
+                    <li>Define el formato y la estructura deseada</li>
+                    <li>Especifica el tono y estilo adecuado para tu audiencia</li>
+                    <li>Añade restricciones o requisitos específicos</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Estudio de caso -->
+        <div class="case-study-container">
+            <div class="case-study-header">
+                <div class="case-study-icon">
+                    <i class="fas fa-search-plus"></i>
+                </div>
+                <div class="case-study-title">Estudio de Caso: Prompts Exitosos vs. Fallidos en una Oficina Chilena</div>
+            </div>
+            
+            <div class="case-study-content">
+                <p>El siguiente caso de estudio proviene de una empresa de servicios financieros en Santiago, donde implementaron ChatGPT para optimizar procesos de atención al cliente. Analizaremos dos prompts utilizados para generar respuestas a consultas sobre créditos hipotecarios: uno que dio excelentes resultados y otro que requirió múltiples revisiones.</p>
+                
+                <h4>Prompt Fallido:</h4>
+                <div class="case-prompt case-failure">
+                    Redacta una respuesta para un cliente que pregunta sobre requisitos para un crédito hipotecario.
+                </div>
+                
+                <p><strong>Problemas identificados:</strong></p>
+                <ul>
+                    <li>No especifica el perfil del cliente ni su situación particular</li>
+                    <li>No menciona las condiciones actuales del banco ni productos específicos</li>
+                    <li>No establece un tono ni formato para la respuesta</li>
+                    <li>No incluye requisitos específicos del mercado chileno y la normativa local</li>
+                    <li>No solicita verificación ni adaptación al proceso interno de la empresa</li>
+                </ul>
+                
+                <h4>Prompt Exitoso:</h4>
+                <div class="case-prompt case-success">
+                    Actúa como un ejecutivo de atención al cliente especializado en créditos hipotecarios de Banco Austral en Santiago, Chile.
+
+Necesito una respuesta personalizada para un cliente con el siguiente perfil:
+- Profesional independiente con 5 años de actividad
+- Renta mensual promedio: $2.500.000 CLP
+- Consulta por financiamiento para primera vivienda (UF 3.000)
+- Tiene ahorros equivalentes al 20% del valor
+
+La respuesta debe incluir:
+1. Saludo personalizado (Sr. Martínez)
+2. Descripción de nuestro producto "Hipotecario Flexible" 
+3. Requisitos específicos para independientes según normativa CMF 2025
+4. Documentación necesaria (con énfasis en declaraciones de impuestos)
+5. Proceso de evaluación de renta variable (promedio de últimos 12 meses)
+6. Simulación básica de cuotas (tasa referencial 4.5% a 25 años)
+7. Invitación a agendar una reunión presencial en sucursal Santiago Centro
+8. Cierre y datos de contacto
+
+Tono: Profesional pero cercano, usando "usted", evitando tecnicismos innecesarios pero manteniendo precisión en términos financieros clave.
+
+Formato: Párrafos cortos, viñetas para los requisitos, destacando en negrita fechas y plazos importantes.
+
+Restricciones: No mencionar productos de la competencia, no prometer aprobaciones garantizadas, no omitir advertencias legales sobre tasas referenciales.
+                </div>
+                
+                <p><strong>Factores de éxito:</strong></p>
+                <ul>
+                    <li>Contextualización completa (banco específico, ubicación, normativa local)</li>
+                    <li>Perfil de cliente detallado que permite personalización precisa</li>
+                    <li>Estructura clara con secuencia lógica adaptada al proceso real del banco</li>
+                    <li>Inclusión de términos financieros locales (UF, CMF, normativas chilenas)</li>
+                    <li>Definición clara de tono, formato y restricciones legales importantes</li>
+                    <li>Adaptación a procesos específicos para profesionales independientes en Chile</li>
+                </ul>
+                
+                <p><strong>Resultados comparativos:</strong> El prompt exitoso generó una respuesta que requirió mínimas modificaciones antes de ser enviada al cliente, mientras que el prompt fallido produjo una respuesta genérica que necesitó ser completamente reescrita por un ejecutivo, sin ahorro efectivo de tiempo.</p>
+            </div>
+        </div>
+        
+        <!-- Ejemplo contextualizado Chile -->
+     
+
+
+<!-- Reflexiones profesionales -->
+<div class="example-container" style="background: linear-gradient(to right, #f9f9ff, #ffffff); border-radius: var(--border-radius-lg); box-shadow: var(--shadow-lg); margin: var(--spacing-xxl) 0;">
+    <div class="example-header" style="background-color: rgba(10, 74, 157, 0.05); padding: var(--spacing-md); border-radius: var(--border-radius-md) var(--border-radius-md) 0 0; border-bottom: 2px solid var(--color-acento-1);">
+        <div class="example-icon" style="display: inline-block; background-color: var(--color-primario); width: 40px; height: 40px; border-radius: 50%; text-align: center; line-height: 40px; margin-right: var(--spacing-md);">
+            <i class="fas fa-lightbulb" style="color: white; font-size: 1.2rem;"></i>
+        </div>
+        <div class="example-title" style="display: inline-block; font-size: 1.5rem; font-weight: 700; color: var(--color-primario); vertical-align: middle;">
+            Reflexiones: El Impacto de los Prompts en la Evolución Profesional
+        </div>
+    </div>
+    
+    <div style="padding: var(--spacing-lg) var(--spacing-xl);">
+        <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: var(--spacing-md); text-align: justify; border-left: 3px solid var(--color-acento-1); padding-left: var(--spacing-md); font-style: italic; color: var(--color-acento-2);">
+            Al examinar cómo los profesionales evolucionan en su relación con herramientas de IA como ChatGPT, emerge un fenómeno particularmente interesante: la capacidad para formular prompts efectivos se convierte en una meta-habilidad transformadora que redefine competencias profesionales tradicionales.
+        </p>
+        
+        <p style="font-size: 1.05rem; line-height: 1.7; margin: var(--spacing-lg) 0; text-align: justify;">
+            Este proceso de refinamiento en la creación de prompts propicia cambios significativos que van más allá de la mera eficiencia operativa:
+        </p>
+        
+        <div style="background-color: rgba(255, 255, 255, 0.7); border-radius: var(--border-radius-md); padding: var(--spacing-lg); margin: var(--spacing-lg) 0; box-shadow: var(--shadow-sm);">
+            <ul style="list-style-type: none; padding: 0; margin: 0;">
+                <li style="margin-bottom: var(--spacing-md); padding-left: 35px; position: relative;">
+                    <i class="fas fa-brain" style="color: var(--color-primario); position: absolute; left: 0; top: 3px; font-size: 1.2rem;"></i>
+                    <span style="font-weight: 600; color: var(--color-primario);">Pensamiento analítico estructurado:</span> 
+                    <span style="display: block; margin-top: 5px; padding-left: 15px;">La formulación de instrucciones precisas desarrolla una mentalidad más organizada y sistemática que se transfiere a todas las áreas de trabajo.</span>
+                </li>
+                <li style="margin-bottom: var(--spacing-md); padding-left: 35px; position: relative;">
+                    <i class="fas fa-project-diagram" style="color: var(--color-primario); position: absolute; left: 0; top: 3px; font-size: 1.2rem;"></i>
+                    <span style="font-weight: 600; color: var(--color-primario);">Descomposición de problemas:</span> 
+                    <span style="display: block; margin-top: 5px; padding-left: 15px;">La práctica de dividir problemas complejos en componentes gestionables mejora la capacidad general de resolución de problemas.</span>
+                </li>
+                <li style="margin-bottom: var(--spacing-md); padding-left: 35px; position: relative;">
+                    <i class="fas fa-sitemap" style="color: var(--color-primario); position: absolute; left: 0; top: 3px; font-size: 1.2rem;"></i>
+                    <span style="font-weight: 600; color: var(--color-primario);">Contextualización adaptativa:</span> 
+                    <span style="display: block; margin-top: 5px; padding-left: 15px;">La necesidad de proporcionar contexto adecuado fomenta una mayor conciencia del entorno organizacional y sus particularidades.</span>
+                </li>
+                <li style="margin-bottom: var(--spacing-md); padding-left: 35px; position: relative;">
+                    <i class="fas fa-comments" style="color: var(--color-primario); position: absolute; left: 0; top: 3px; font-size: 1.2rem;"></i>
+                    <span style="font-weight: 600; color: var(--color-primario);">Comunicación estratégica:</span> 
+                    <span style="display: block; margin-top: 5px; padding-left: 15px;">El ejercicio de anticipar posibles interpretaciones erróneas agudiza la capacidad de comunicación precisa y efectiva.</span>
+                </li>
+                <li style="padding-left: 35px; position: relative;">
+                    <i class="fas fa-sync-alt" style="color: var(--color-primario); position: absolute; left: 0; top: 3px; font-size: 1.2rem;"></i>
+                    <span style="font-weight: 600; color: var(--color-primario);">Mejora continua iterativa:</span> 
+                    <span style="display: block; margin-top: 5px; padding-left: 15px;">La evaluación crítica de resultados generados estimula un enfoque de perfeccionamiento progresivo aplicable a diversos procesos.</span>
+                </li>
+            </ul>
+        </div>
+        
+        <p style="font-size: 1.05rem; line-height: 1.7; margin: var(--spacing-lg) 0; text-align: justify;">
+            El dominio de esta habilidad establece una nueva jerarquía de competencias que trasciende divisiones departamentales tradicionales. Observamos que quienes cultivan esta capacidad se convierten en <span style="color: var(--color-primario); font-weight: 600;">"traductores cognitivos"</span> capaces de transformar necesidades organizacionales ambiguas en instrucciones precisas que optimizan recursos tecnológicos.
+        </p>
+        
+        <div style="background-color: rgba(255, 193, 7, 0.08); border-radius: var(--border-radius-md); padding: var(--spacing-md) var(--spacing-lg); margin-top: var(--spacing-xl); border-left: 4px solid var(--color-acento-1); position: relative; font-style: italic;">
+            <i class="fas fa-quote-left" style="color: var(--color-acento-1); position: absolute; top: -15px; left: 20px; font-size: 2rem; opacity: 0.2;"></i>
+            <p style="margin: var(--spacing-md) 0; position: relative; z-index: 1;">
+                "Lo fascinante de la creación de prompts efectivos es que reintroduce el valor del pensamiento humano estructurado precisamente en la era de la automatización. Paradójicamente, mientras más sofisticadas se vuelven nuestras herramientas de IA, más valiosa se vuelve nuestra capacidad para articularles exactamente lo que necesitamos, en los términos más precisos posibles".
+            </p>
+            <p style="text-align: right; margin: 0; font-weight: 600; color: var(--color-acento-2);">
+                — Teresa Vidal, Consultora en Transformación Digital
+            </p>
+        </div>
+    </div>
+    
+    <div style="background: linear-gradient(to right, var(--color-primario-grad), transparent); height: 5px; border-radius: 0 0 var(--border-radius-md) var(--border-radius-md); margin-top: var(--spacing-md);"></div>
+</div>
+
+
+
+        
+
+
+
+
+
+
+
+        <!-- Consejos prácticos adicionales -->
+        <section class="content-section">
+            <h2>Consejos Prácticos para el Uso Diario de Prompts</h2>
+            
+            <p>Para integrar efectivamente estas técnicas en tu rutina administrativa diaria, considera estos consejos prácticos adicionales:</p>
+            
+            <h3>Biblioteca de prompts personales</h3>
+            
+            <p>Desarrolla y mantén una biblioteca personal de prompts efectivos para tareas recurrentes. Esto te permitirá:</p>
+            
+            <ul>
+                <li>Reutilizar estructuras que han demostrado buenos resultados</li>
+                <li>Mantener consistencia en comunicaciones similares</li>
+                <li>Ahorrar tiempo al no tener que "reinventar la rueda" cada vez</li>
+                <li>Compartir prompts efectivos con colegas (creando un valor organizacional)</li>
+            </ul>
+            
+            <h3>Estrategias para mejorar tus prompts continuamente</h3>
+            
+            <p>El arte de crear prompts efectivos es una habilidad que se desarrolla con la práctica. Algunas estrategias para mejorar progresivamente incluyen:</p>
+            
+            <ol>
+                <li><strong>Analizar los fallos:</strong> Cuando un prompt no produce el resultado esperado, identifica qué elementos faltaron o fueron poco claros.</li>
+                <li><strong>Iteración consciente:</strong> Refina tus prompts basándote en resultados anteriores, mejorando aspectos específicos cada vez.</li>
+                <li><strong>A/B Testing:</strong> Prueba variaciones de un mismo prompt para identificar qué formulaciones funcionan mejor para distintos tipos de tareas.</li>
+                <li><strong>Feedback de compañeros:</strong> Comparte tus prompts con colegas para obtener perspectivas diferentes sobre cómo mejorarlos.</li>
+                <li><strong>Documentación:</strong> Mantén un registro de tus prompts más exitosos y los contextos en que funcionaron mejor.</li>
+            </ol>
+            
+            <h3>Adaptación al contexto chileno</h3>
+            
+            <p>Para maximizar la relevancia en el entorno profesional chileno, asegúrate de incorporar en tus prompts:</p>
+            
+            <ul>
+                <li>Términos y expresiones comunes en el español chileno profesional</li>
+                <li>Referencias a normativas locales relevantes para tu sector</li>
+                <li>Estructura de documentos que siga las convenciones locales</li>
+                <li>Formatos de fechas, monedas y unidades específicas (UF, UTM, etc.)</li>
+                <li>Contexto cultural y prácticas comerciales propias del mercado chileno</li>
+            </ul>
+        </section>
+        
+        <!-- Transición a la siguiente sección -->
+        <div class="next-section-transition">
+            <p>Ahora que dominas el arte de crear prompts efectivos, veamos cómo aplicar estas habilidades para optimizar tus correos electrónicos y comunicaciones profesionales, una de las tareas que más tiempo consume en la rutina administrativa.</p>
+        </div>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const checkBtn = document.getElementById('check-btn');
+            const resetBtn = document.getElementById('reset-btn');
+            const promptTextarea = document.getElementById('advanced-prompt');
+            const feedbackContainer = document.getElementById('exercise-feedback');
+            
+            checkBtn.addEventListener('click', function() {
+                const promptText = promptTextarea.value.trim();
+                
+                if (promptText.length < 50) {
+                    feedbackContainer.textContent = "Tu prompt es demasiado corto. Intenta añadir más detalles y estructura.";
+                    feedbackContainer.className = "exercise-feedback feedback-neutral";
+                    feedbackContainer.style.display = "block";
+                    return;
+                }
+                
+                // Verificar elementos clave que debería tener un buen prompt
+                const keyElements = [
+                    { term: /rol|actúa como|asume el papel|posición de/i, description: "Definición de rol" },
+                    { term: /empresa|compañía|organización|departamento|contexto/i, description: "Contexto específico" },
+                    { term: /presentación|slides|diapositivas|powerpoint/i, description: "Tipo de entregable" },
+                    { term: /formato|estructura|secciones|diseño/i, description: "Formato específico" },
+                    { term: /datos|cifras|métricas|kpis|estadísticas|números/i, description: "Datos o métricas" },
+                    { term: /tone|tono|estilo|lenguaje|formal|informal/i, description: "Tono o estilo" },
+                    { term: /público|audiencia|equipo|gerencia|directivos/i, description: "Audiencia definida" }
+                ];
+                
+                const foundElements = [];
+                const missingElements = [];
+                
+                keyElements.forEach(element => {
+                    if (element.term.test(promptText)) {
+                        foundElements.push(element.description);
+                    } else {
+                        missingElements.push(element.description);
+                    }
+                });
+                
+                // Generar retroalimentación basada en el análisis
+                let feedback = "";
+                
+                if (foundElements.length >= 5) {
+                    feedback = `<p><strong>¡Excelente trabajo!</strong> Has creado un prompt avanzado que incluye varios elementos clave:</p>`;
+                    feedback += "<ul>";
+                    foundElements.forEach(element => {
+                        feedback += `<li>✅ ${element}</li>`;
+                    });
+                    feedback += "</ul>";
+                    
+                    if (missingElements.length > 0) {
+                        feedback += "<p>Para hacerlo aún mejor, considera añadir:</p>";
+                        feedback += "<ul>";
+                        missingElements.forEach(element => {
+                            feedback += `<li>➕ ${element}</li>`;
+                        });
+                        feedback += "</ul>";
+                    }
+                    
+                    feedbackContainer.className = "exercise-feedback feedback-positive";
+                } else {
+                    feedback = `<p><strong>Buen intento, pero tu prompt aún puede mejorar.</strong> Has incluido correctamente:</p>`;
+                    feedback += "<ul>";
+                    foundElements.forEach(element => {
+                        feedback += `<li>✅ ${element}</li>`;
+                    });
+                    feedback += "</ul>";
+                    
+                    feedback += "<p>Considera incluir estos elementos importantes que faltan:</p>";
+                    feedback += "<ul>";
+                    missingElements.forEach(element => {
+                        feedback += `<li>❌ ${element}</li>`;
+                    });
+                    feedback += "</ul>";
+                    
+                    feedbackContainer.className = "exercise-feedback feedback-neutral";
+                }
+                
+                feedbackContainer.innerHTML = feedback;
+                feedbackContainer.style.display = "block";
+            });
+            
+            resetBtn.addEventListener('click', function() {
+                promptTextarea.value = "";
+                feedbackContainer.style.display = "none";
+            });
+            
+            // Ejemplo de implementación simple de Before/After (normalmente requeriría una imagen con slider)
+            // En una implementación real, esto sería un slider que realmente muestra dos imágenes
+            const sliderContainer = document.querySelector('.before-after-container');
+            if (sliderContainer) {
+                const slider = document.querySelector('.before-after-slider');
+                const afterContainer = document.querySelector('.after-container');
+                
+                let isActive = false;
+                
+                // Función para manejar el movimiento
+                const handleMovement = (e) => {
+                    if (!isActive) return;
+                    
+                    // Determinar posición X relativa dentro del contenedor
+                    const containerRect = sliderContainer.getBoundingClientRect();
+                    let x = (e.clientX || e.touches[0].clientX) - containerRect.left;
+                    
+                    // Limitar dentro del contenedor
+                    if (x < 0) x = 0;
+                    if (x > containerRect.width) x = containerRect.width;
+                    
+                    // Calcular porcentaje
+                    const percent = x / containerRect.width * 100;
+                    
+                    // Actualizar posiciones
+                    slider.style.left = `${percent}%`;
+                    afterContainer.style.width = `${percent}%`;
+                };
+                
+                // Eventos táctiles y de ratón
+                slider.addEventListener('mousedown', () => isActive = true);
+                slider.addEventListener('touchstart', () => isActive = true);
+                
+                window.addEventListener('mouseup', () => isActive = false);
+                window.addEventListener('touchend', () => isActive = false);
+                
+                window.addEventListener('mousemove', handleMovement);
+                window.addEventListener('touchmove', handleMovement);
+            }
+            
+            // Carrusel simple
+            const carouselTrack = document.querySelector('.carousel-track');
+            const carouselSlides = document.querySelectorAll('.carousel-slide');
+            const indicators = document.querySelectorAll('.carousel-indicator');
+            const prevButton = document.querySelector('.carousel-button.prev');
+            const nextButton = document.querySelector('.carousel-button.next');
+            
+            if (carouselTrack && carouselSlides.length > 0) {
+                let currentIndex = 0;
+                
+                // Función para actualizar el carrusel
+                const updateCarousel = () => {
+                    carouselTrack.style.transform = `translateX(-${currentIndex * 100}%)`;
+                    
+                    // Actualizar indicadores
+                    indicators.forEach((indicator, index) => {
+                        if (index === currentIndex) {
+                            indicator.classList.add('active');
+                        } else {
+                            indicator.classList.remove('active');
+                        }
+                    });
+                };
+                
+                // Configurar botones de navegación
+                if (prevButton) {
+                    prevButton.addEventListener('click', () => {
+                        currentIndex = (currentIndex - 1 + carouselSlides.length) % carouselSlides.length;
+                        updateCarousel();
+                    });
+                }
+                
+                if (nextButton) {
+                    nextButton.addEventListener('click', () => {
+                        currentIndex = (currentIndex + 1) % carouselSlides.length;
+                        updateCarousel();
+                    });
+                }
+                
+                // Configurar indicadores
+                indicators.forEach((indicator, index) => {
+                    indicator.addEventListener('click', () => {
+                        currentIndex = index;
+                        updateCarousel();
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+</html>

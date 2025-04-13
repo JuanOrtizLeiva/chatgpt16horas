@@ -1,0 +1,1857 @@
+<!DOCTYPE html>
+<!-- saved from url=(0061)file:///C:/Users/jyjva/OneDrive/Escritorio/Seccion%201.4.html -->
+<html lang="es"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Optimizando Comunicaciones Profesionales con ChatGPT: Correos, Informes y Presentaciones</title>
+    <link rel="stylesheet" href="./Seccion 1.4_files/all.min.css">
+    <meta name="description" content="Aprende a utilizar ChatGPT para redactar, mejorar y optimizar comunicaciones profesionales efectivas y ahorrar tiempo en tareas de redacción.">
+    <style>
+        :root {
+            /* Paleta de colores - Combo A */
+            --color-primario: #0A4A9D;
+            --color-primario-grad: #3B77C6;
+            --color-acento-1: #FB8C00;
+            --color-acento-2: #6C757D;
+            --color-texto: #212529;
+            --color-fondo: #FFFFFF;
+            --color-fondo-alt: #F1F3F5;
+            --color-blanco: #FFFFFF;
+            
+            /* Espaciado */
+            --spacing-xs: 0.5rem;
+            --spacing-sm: 1rem;
+            --spacing-md: 1.5rem;
+            --spacing-lg: 2rem;
+            --spacing-xl: 3rem;
+            --spacing-xxl: 5rem;
+            
+            /* Bordes y sombras */
+            --border-radius-sm: 4px;
+            --border-radius-md: 8px;
+            --border-radius-lg: 12px;
+            --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+            --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 6px 16px rgba(0, 0, 0, 0.1);
+            
+            /* Transiciones */
+            --transition-fast: 0.2s ease;
+            --transition-normal: 0.3s ease;
+            --transition-slow: 0.5s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--color-texto);
+            background-color: var(--color-fondo);
+            padding: 0;
+            margin: 0;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: var(--spacing-md);
+        }
+        
+        /* Encabezado de sección */
+        .section-header {
+            background: linear-gradient(135deg, var(--color-primario), var(--color-primario-grad));
+            color: var(--color-blanco);
+            padding: var(--spacing-lg) var(--spacing-md);
+            border-radius: var(--border-radius-md);
+            margin-bottom: var(--spacing-xl);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .section-header h1 {
+            font-size: 2.2rem;
+            margin-bottom: var(--spacing-sm);
+            font-weight: 700;
+        }
+        
+        .section-header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 800px;
+        }
+        
+        /* Introducción destacada */
+        .intro-highlight {
+            font-size: 1.4rem;
+            font-weight: 300;
+            line-height: 1.8;
+            color: var(--color-texto);
+            background-color: var(--color-fondo-alt);
+            padding: var(--spacing-lg);
+            border-radius: var(--border-radius-md);
+            margin-bottom: var(--spacing-xl);
+            border-left: 5px solid var(--color-acento-1);
+        }
+        
+        /* Secciones de contenido */
+        .content-section {
+            margin-bottom: var(--spacing-xl);
+        }
+        
+        .content-section h2 {
+            font-size: 1.8rem;
+            color: var(--color-primario);
+            margin-bottom: var(--spacing-md);
+            padding-bottom: var(--spacing-xs);
+            border-bottom: 2px solid var(--color-primario-grad);
+        }
+        
+        .content-section h3 {
+            font-size: 1.4rem;
+            color: var(--color-texto);
+            margin: var(--spacing-md) 0 var(--spacing-sm);
+        }
+        
+        .content-section p {
+            margin-bottom: var(--spacing-md);
+            font-size: 1.05rem;
+        }
+        
+        .content-section ul, .content-section ol {
+            margin-bottom: var(--spacing-md);
+            padding-left: var(--spacing-xl);
+            width: 85%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .content-section li {
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        /* Tarjetas de datos */
+        .data-card {
+            background-color: var(--color-fondo);
+            border-radius: var(--border-radius-md);
+            padding: var(--spacing-lg);
+            margin-bottom: var(--spacing-lg);
+            box-shadow: var(--shadow-md);
+            border-top: 4px solid var(--color-acento-1);
+        }
+        
+        .data-card-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .data-card-icon {
+            font-size: 2rem;
+            color: var(--color-acento-1);
+            margin-right: var(--spacing-md);
+        }
+        
+        .data-card-title {
+            font-size: 1.5rem;
+            color: var(--color-primario);
+            font-weight: 600;
+        }
+        
+        .data-stat {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--color-primario);
+            margin: var(--spacing-sm) 0;
+        }
+        
+        .data-stat-description {
+            font-size: 1.1rem;
+            color: var(--color-acento-2);
+        }
+        
+        /* Acordeones de texto */
+        .accordion-container {
+            margin: var(--spacing-xl) 0;
+        }
+        
+        .accordion-item {
+            margin-bottom: var(--spacing-sm);
+            border-radius: var(--border-radius-md);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .accordion-header {
+            background-color: var(--color-fondo-alt);
+            padding: var(--spacing-md);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            color: var(--color-primario);
+            transition: background-color var(--transition-fast);
+        }
+        
+        .accordion-header:hover {
+            background-color: #e9ecef;
+        }
+        
+        .accordion-header i {
+            transition: transform var(--transition-normal);
+        }
+        
+        .accordion-content {
+            background-color: var(--color-fondo);
+            padding: 0 var(--spacing-md);
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height var(--transition-normal), padding var(--transition-normal);
+        }
+        
+        .accordion-item.active .accordion-header i {
+            transform: rotate(180deg);
+        }
+        
+        .accordion-item.active .accordion-content {
+            max-height: 1000px;
+            padding: var(--spacing-md);
+        }
+        
+        /* Ejercicio fill-in-the-blanks */
+        .exercise-container {
+            background-color: var(--color-fondo-alt);
+            border-radius: var(--border-radius-md);
+            padding: var(--spacing-lg);
+            margin: var(--spacing-xl) 0;
+            box-shadow: var(--shadow-md);
+            border-left: 5px solid var(--color-acento-1);
+        }
+        
+        .exercise-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .exercise-icon {
+            font-size: 1.8rem;
+            color: var(--color-acento-1);
+            margin-right: var(--spacing-sm);
+        }
+        
+        .exercise-title {
+            font-size: 1.5rem;
+            color: var(--color-primario);
+            font-weight: 600;
+        }
+        
+        .exercise-description {
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .fill-blanks-container {
+            background-color: var(--color-fondo);
+            padding: var(--spacing-md);
+            border-radius: var(--border-radius-md);
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .fill-blanks-text {
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+        
+        .fill-blanks-input {
+            display: inline-block;
+            width: 180px;
+            padding: var(--spacing-xs) var(--spacing-sm);
+            margin: 0 var(--spacing-xs);
+            border: 2px solid var(--color-acento-2);
+            border-radius: var(--border-radius-sm);
+            font-family: inherit;
+            font-size: 1rem;
+        }
+        
+        .fill-blanks-options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--spacing-sm);
+            margin-top: var(--spacing-md);
+        }
+        
+        .fill-blanks-option {
+            background-color: var(--color-acento-1);
+            color: var(--color-blanco);
+            padding: var(--spacing-xs) var(--spacing-md);
+            border-radius: var(--border-radius-sm);
+            cursor: pointer;
+            transition: background-color var(--transition-fast);
+        }
+        
+        .fill-blanks-option:hover {
+            background-color: #e67e00;
+        }
+        
+        .exercise-buttons {
+            display: flex;
+            gap: var(--spacing-md);
+            margin-top: var(--spacing-md);
+        }
+        
+        .exercise-btn {
+            padding: var(--spacing-sm) var(--spacing-lg);
+            border-radius: var(--border-radius-md);
+            font-weight: 600;
+            cursor: pointer;
+            border: none;
+            transition: background-color var(--transition-fast);
+        }
+        
+        .check-btn {
+            background-color: var(--color-primario);
+            color: var(--color-blanco);
+        }
+        
+        .check-btn:hover {
+            background-color: var(--color-primario-grad);
+        }
+        
+        .reset-btn {
+            background-color: var(--color-acento-2);
+            color: var(--color-blanco);
+        }
+        
+        .reset-btn:hover {
+            background-color: #5a6268;
+        }
+        
+        .exercise-feedback {
+            padding: var(--spacing-md);
+            border-radius: var(--border-radius-md);
+            margin-top: var(--spacing-md);
+            display: none;
+        }
+        
+        .feedback-positive {
+            background-color: rgba(40, 167, 69, 0.1);
+            border-left: 4px solid #28a745;
+        }
+        
+        .feedback-neutral {
+            background-color: rgba(255, 193, 7, 0.1);
+            border-left: 4px solid #ffc107;
+        }
+        
+        /* Proyecto progresivo */
+        .project-container {
+            background-color: var(--color-fondo);
+            border-radius: var(--border-radius-md);
+            padding: var(--spacing-lg);
+            margin: var(--spacing-xl) 0;
+            box-shadow: var(--shadow-md);
+            border-left: 5px solid var(--color-primario);
+        }
+        
+        .project-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .project-icon {
+            font-size: 1.8rem;
+            color: var(--color-primario);
+            margin-right: var(--spacing-sm);
+        }
+        
+        .project-title {
+            font-size: 1.5rem;
+            color: var(--color-primario);
+            font-weight: 600;
+        }
+        
+        .project-steps {
+            margin-top: var(--spacing-md);
+        }
+        
+        .project-step {
+            background-color: var(--color-fondo-alt);
+            border-radius: var(--border-radius-md);
+            padding: var(--spacing-md);
+            margin-bottom: var(--spacing-md);
+            border-left: 4px solid var(--color-acento-1);
+        }
+        
+        .project-step-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .project-step-number {
+            background-color: var(--color-acento-1);
+            color: var(--color-blanco);
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: var(--spacing-sm);
+        }
+        
+        .project-step-title {
+            font-weight: 600;
+            color: var(--color-primario);
+        }
+        
+        .template-container {
+            background-color: var(--color-fondo);
+            border: 1px solid #e0e0e0;
+            border-radius: var(--border-radius-sm);
+            padding: var(--spacing-md);
+            margin-top: var(--spacing-sm);
+            font-family: monospace;
+            white-space: pre-wrap;
+        }
+        
+        /* Tablas comparativas */
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: var(--spacing-lg) 0;
+            background-color: var(--color-fondo);
+            box-shadow: var(--shadow-md);
+            border-radius: var(--border-radius-md);
+            overflow: hidden;
+        }
+        
+        .comparison-table th {
+            background-color: var(--color-primario);
+            color: var(--color-blanco);
+            padding: var(--spacing-sm);
+            text-align: left;
+        }
+        
+        .comparison-table td {
+            padding: var(--spacing-sm);
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .comparison-table tr:nth-child(even) {
+            background-color: var(--color-fondo-alt);
+        }
+        
+        .comparison-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .check-icon {
+            color: #28a745;
+        }
+        
+        .times-icon {
+            color: #dc3545;
+        }
+        
+        /* Ejemplo de uso */
+        .usage-example {
+            background-color: var(--color-fondo-alt);
+            border-radius: var(--border-radius-md);
+            padding: var(--spacing-md);
+            margin: var(--spacing-md) 0;
+            border-left: 4px solid var(--color-primario);
+        }
+        
+        .usage-title {
+            font-weight: 600;
+            color: var(--color-primario);
+            margin-bottom: var(--spacing-xs);
+        }
+        
+        .usage-prompt {
+            background-color: var(--color-fondo);
+            padding: var(--spacing-sm);
+            border-radius: var(--border-radius-sm);
+            margin-bottom: var(--spacing-sm);
+            font-family: monospace;
+            white-space: pre-wrap;
+            border-left: 2px solid var(--color-acento-1);
+        }
+        
+        .usage-response {
+            background-color: var(--color-fondo);
+            padding: var(--spacing-sm);
+            border-radius: var(--border-radius-sm);
+            font-style: italic;
+            border-left: 2px solid var(--color-primario);
+        }
+        
+        /* Gráficos */
+        .chart-container {
+            background-color: var(--color-fondo);
+            border-radius: var(--border-radius-md);
+            padding: var(--spacing-md);
+            margin: var(--spacing-lg) 0;
+            box-shadow: var(--shadow-md);
+        }
+        
+        .chart-title {
+            color: var(--color-primario);
+            font-weight: 600;
+            margin-bottom: var(--spacing-sm);
+            text-align: center;
+        }
+        
+        .bar-chart {
+            height: 300px;
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-around;
+            padding: var(--spacing-md) 0;
+        }
+        
+        .bar-group {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100px;
+        }
+        
+        .bar {
+            width: 60px;
+            background: linear-gradient(to top, var(--color-primario), var(--color-primario-grad));
+            border-radius: var(--border-radius-sm) var(--border-radius-sm) 0 0;
+            transition: height var(--transition-normal);
+            position: relative;
+        }
+        
+        .bar-label {
+            font-size: 0.9rem;
+            margin-top: var(--spacing-xs);
+            text-align: center;
+        }
+        
+        .bar-value {
+            position: absolute;
+            top: -25px;
+            width: 100%;
+            text-align: center;
+            font-weight: 600;
+            color: var(--color-primario);
+        }
+        
+        /* Transición siguiente sección */
+        .next-section-transition {
+            background: linear-gradient(to right, var(--color-fondo-alt), var(--color-blanco));
+            padding: var(--spacing-lg);
+            border-radius: var(--border-radius-md);
+            margin-top: var(--spacing-xl);
+            border-left: 5px solid var(--color-acento-1);
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+        
+        /* Multimedia */
+        .image-container {
+            margin: var(--spacing-lg) 0;
+            text-align: center;
+        }
+        
+        .image-center {
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+        }
+        
+        .content-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: var(--border-radius-md);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .image-caption {
+            margin-top: var(--spacing-sm);
+            color: var(--color-acento-2);
+            text-align: center;
+            padding: 0 var(--spacing-lg);
+        }
+        
+        /* Video */
+        .video-container {
+            margin: var(--spacing-xl) auto;
+            border-radius: var(--border-radius-md);
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .video-header {
+            background: linear-gradient(135deg, var(--color-primario), var(--color-primario-grad));
+            padding: var(--spacing-sm) var(--spacing-md);
+            color: var(--color-blanco);
+        }
+        
+        .video-header h3 {
+            margin: 0;
+            font-size: 1.3rem;
+            display: flex;
+            align-items: center;
+            color: var(--color-blanco);
+        }
+        
+        .video-description {
+            background-color: var(--color-fondo-alt);
+            padding: var(--spacing-sm) var(--spacing-md);
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .video-frame-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+        }
+        
+        .video-frame-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+        
+        /* Flashcards - Nueva sección */
+        .flashcards-section {
+            margin: var(--spacing-lg) 0 var(--spacing-xxl) 0;
+            position: relative;
+        }
+        
+        .flashcards-container {
+            position: relative;
+            height: 520px; /* Aumentado en aproximadamente 40% */
+            margin: var(--spacing-xl) auto;
+            max-width: 900px;
+        }
+        
+        .flashcard {
+            width: 450px; /* Aumentado en aproximadamente 40% */
+            height: 300px; /* Aumentado en aproximadamente 40% */
+            perspective: 1000px;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform-origin: center;
+            transform-style: preserve-3d;
+            transition: all 0.4s ease;
+            z-index: 1;
+        }
+        
+        .flashcard:nth-child(1) {
+            transform: translateX(-50%) rotate(-6deg) translateY(5px);
+            z-index: 6;
+        }
+        
+        .flashcard:nth-child(2) {
+            transform: translateX(-48%) rotate(-3deg) translateY(15px);
+            z-index: 5;
+        }
+        
+        .flashcard:nth-child(3) {
+            transform: translateX(-50%) rotate(0deg) translateY(25px);
+            z-index: 4;
+        }
+        
+        .flashcard:nth-child(4) {
+            transform: translateX(-52%) rotate(3deg) translateY(35px);
+            z-index: 3;
+        }
+        
+        .flashcard:nth-child(5) {
+            transform: translateX(-50%) rotate(6deg) translateY(45px);
+            z-index: 2;
+        }
+        
+        .flashcard:nth-child(6) {
+            transform: translateX(-48%) rotate(9deg) translateY(55px);
+            z-index: 1;
+        }
+        
+        .flashcard:hover {
+            transform: translateX(-50%) rotate(0) translateY(-10px) scale(1.02);
+            z-index: 10;
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .flashcard-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transform-style: preserve-3d;
+            cursor: pointer;
+            box-shadow: var(--shadow-md);
+            border-radius: var(--border-radius-md);
+        }
+        
+        .flashcard.flipped .flashcard-inner {
+            transform: rotateY(180deg);
+        }
+        
+        .flashcard-front, .flashcard-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: var(--spacing-lg);
+            border-radius: var(--border-radius-md);
+        }
+        
+        /* Colores diferentes para las tarjetas */
+        .flashcard:nth-child(1) .flashcard-front {
+            background: linear-gradient(135deg, #0A4A9D, #3B77C6);
+        }
+        
+        .flashcard:nth-child(2) .flashcard-front {
+            background: linear-gradient(135deg, #FB8C00, #FFA726);
+        }
+        
+        .flashcard:nth-child(3) .flashcard-front {
+            background: linear-gradient(135deg, #00BFA5, #26A69A);
+        }
+        
+        .flashcard:nth-child(4) .flashcard-front {
+            background: linear-gradient(135deg, #7E57C2, #9575CD);
+        }
+        
+        .flashcard:nth-child(5) .flashcard-front {
+            background: linear-gradient(135deg, #F44336, #EF5350);
+        }
+        
+        .flashcard:nth-child(6) .flashcard-front {
+            background: linear-gradient(135deg, #43A047, #66BB6A);
+        }
+        
+        .flashcard-back {
+            background-color: var(--color-fondo-alt);
+            color: var(--color-texto);
+            transform: rotateY(180deg);
+            overflow-y: auto;
+            padding: var(--spacing-xl);
+            border: 1px solid #ddd;
+            box-shadow: inset 0 0 10px rgba(0,0,0,0.05);
+        }
+        
+        .flashcard-question {
+            font-weight: 600;
+            font-size: 1.3rem;
+            line-height: 1.5;
+            margin-bottom: var(--spacing-xl);
+            max-width: 90%;
+        }
+        
+        .flashcard-answer {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            padding: 0 var(--spacing-sm);
+            max-width: 90%;
+            margin-bottom: var(--spacing-xl);
+        }
+        
+        .flashcard-instruction {
+            position: absolute;
+            bottom: 18px;
+            font-size: 0.95rem;
+            opacity: 0.8;
+            background-color: rgba(255,255,255,0.2);
+            padding: 5px 15px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .flashcard-instruction i {
+            font-size: 0.85rem;
+        }
+        
+        .flashcards-help {
+            text-align: center;
+            margin: var(--spacing-sm) 0 var(--spacing-xl) 0;
+            color: var(--color-acento-2);
+            font-size: 0.95rem;
+            font-style: italic;
+        }
+        
+        .flashcards-navigation {
+            display: flex;
+            justify-content: space-between;
+            max-width: 500px;
+            margin: 0 auto;
+            padding: var(--spacing-md) 0;
+        }
+        
+        .flashcards-nav-button {
+            background: linear-gradient(135deg, var(--color-primario), var(--color-primario-grad));
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: all 0.2s ease;
+        }
+        
+        .flashcards-nav-button:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .flashcards-nav-button:disabled {
+            background: #cccccc;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+        
+        .flashcards-progress {
+            display: flex;
+            align-items: center;
+            color: var(--color-primario);
+            font-weight: 600;
+        }
+        
+        .flashcard-controls {
+            position: absolute;
+            bottom: -60px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            gap: var(--spacing-md);
+            transition: opacity 0.3s ease;
+        }
+        
+        .flashcard-control-button {
+            background-color: var(--color-fondo-alt);
+            border: 1px solid var(--color-acento-2);
+            color: var(--color-primario);
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 500;
+            transition: all 0.2s ease;
+        }
+        
+        .flashcard-control-button:hover {
+            background-color: var(--color-primario);
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        /* Responsive */
+        @media (max-width: 992px) {
+            .chart-container {
+                overflow-x: auto;
+            }
+            
+            .bar-chart {
+                min-width: 600px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .section-header h1 {
+                font-size: 1.8rem;
+            }
+            
+            .intro-highlight {
+                font-size: 1.2rem;
+            }
+            
+            .content-section h2 {
+                font-size: 1.5rem;
+            }
+            
+            .content-section h3 {
+                font-size: 1.3rem;
+            }
+            
+            .data-stat {
+                font-size: 2rem;
+            }
+            
+            .exercise-buttons {
+                flex-direction: column;
+            }
+            
+            .content-section ul, .content-section ol {
+                width: 95%;
+                padding-left: var(--spacing-lg);
+            }
+            
+            .flashcards-container {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Encabezado de sección -->
+        <header class="section-header">
+            <h1>Optimizando Comunicaciones Profesionales con ChatGPT: Correos, Informes y Presentaciones</h1>
+            <p>Aprende a utilizar ChatGPT como un asistente avanzado de redacción que te ayudará a crear comunicaciones efectivas en menos tiempo y con mayor impacto.</p>
+        </header>
+        
+        <!-- Introducción destacada -->
+        <div class="intro-highlight">
+            Un profesional promedio dedica más de 3 horas diarias a gestionar correos electrónicos y redactar documentos. ¿Qué pasaría si pudieras reducir ese tiempo a la mitad? ChatGPT puede transformar radicalmente tu productividad en comunicaciones profesionales.
+        </div>
+        
+        <!-- Sección de Flashcards - REPOSICIONADA AL PRINCIPIO -->
+        <section class="flashcards-section">
+            <h2>Conceptos clave: Optimizando comunicaciones con ChatGPT</h2>
+            
+            <p>Estas flashcards interactivas te ayudarán a recordar los conceptos más importantes sobre el uso de ChatGPT en comunicaciones profesionales. Navega entre las tarjetas y haz clic para ver las respuestas.</p>
+            
+            <div class="flashcards-container">
+                <div class="flashcard" data-card-index="1" style="z-index: 10; transform: translateX(-50%) rotate(0deg) translateY(-10px); opacity: 1;">
+                    <div class="flashcard-inner">
+                        <div class="flashcard-front">
+                            <div class="flashcard-question">¿Cuánto tiempo dedica un profesional promedio a gestionar correos y redactar documentos diariamente?</div>
+                            <div class="flashcard-instruction"><i class="fas fa-sync-alt"></i> Haz clic para ver la respuesta</div>
+                        </div>
+                        <div class="flashcard-back">
+                            <div class="flashcard-answer">3.1 horas, aproximadamente el 40% de una jornada laboral estándar según el Estudio de Productividad Laboral 2025.</div>
+                            <div class="flashcard-instruction"><i class="fas fa-sync-alt"></i> Haz clic para volver a la pregunta</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="flashcard" data-card-index="2" style="transform: translateX(calc(-50% + 2px)) rotate(3deg) translateY(15px); z-index: 5; opacity: 0.85;">
+                    <div class="flashcard-inner">
+                        <div class="flashcard-front">
+                            <div class="flashcard-question">¿Cuáles son los 4 tipos principales de correos electrónicos que se pueden optimizar con ChatGPT?</div>
+                            <div class="flashcard-instruction"><i class="fas fa-sync-alt"></i> Haz clic para ver la respuesta</div>
+                        </div>
+                        <div class="flashcard-back">
+                            <div class="flashcard-answer">
+                                1. Correos de seguimiento de ventas y clientes<br>
+                                2. Comunicaciones internas y coordinación de equipos<br>
+                                3. Gestión de conflictos y situaciones delicadas<br>
+                                4. Comunicaciones formales y administrativas
+                            </div>
+                            <div class="flashcard-instruction"><i class="fas fa-sync-alt"></i> Haz clic para volver a la pregunta</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="flashcard" data-card-index="3" style="transform: translateX(calc(-50% + 4px)) rotate(6deg) translateY(25px); z-index: 4; opacity: 0.7;">
+                    <div class="flashcard-inner">
+                        <div class="flashcard-front">
+                            <div class="flashcard-question">Menciona 3 estrategias avanzadas para optimizar correos con ChatGPT</div>
+                            <div class="flashcard-instruction"><i class="fas fa-sync-alt"></i> Haz clic para ver la respuesta</div>
+                        </div>
+                        <div class="flashcard-back">
+                            <div class="flashcard-answer">
+                                1. Creación de plantillas personalizadas<br>
+                                2. Mejora de borradores existentes<br>
+                                3. Adaptación cultural y contextual<br>
+                                (También válidos: Creación de respuestas tipo para consultas frecuentes o Análisis y mejora del tono emocional)
+                            </div>
+                            <div class="flashcard-instruction"><i class="fas fa-sync-alt"></i> Haz clic para volver a la pregunta</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="flashcard" data-card-index="4" style="transform: translateX(calc(-50% + 6px)) rotate(9deg) translateY(35px); z-index: 3; opacity: 0.55;">
+                    <div class="flashcard-inner">
+                        <div class="flashcard-front">
+                            <div class="flashcard-question">¿Cuáles son los pasos recomendados para el proceso de creación de informes con ChatGPT?</div>
+                            <div class="flashcard-instruction"><i class="fas fa-sync-alt"></i> Haz clic para ver la respuesta</div>
+                        </div>
+                        <div class="flashcard-back">
+                            <div class="flashcard-answer">
+                                1. Definición del esquema general<br>
+                                2. Generación de secciones clave<br>
+                                3. Enriquecimiento con análisis<br>
+                                4. Refinamiento de lenguaje y tono<br>
+                                5. Creación de elementos complementarios<br>
+                                6. Revisión y edición final
+                            </div>
+                            <div class="flashcard-instruction"><i class="fas fa-sync-alt"></i> Haz clic para volver a la pregunta</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="flashcard" data-card-index="5" style="transform: translateX(calc(-50% + 8px)) rotate(12deg) translateY(45px); z-index: 2; opacity: 0.4;">
+                    <div class="flashcard-inner">
+                        <div class="flashcard-front">
+                            <div class="flashcard-question">¿Qué elementos de las presentaciones puede ayudar a optimizar ChatGPT?</div>
+                            <div class="flashcard-instruction"><i class="fas fa-sync-alt"></i> Haz clic para ver la respuesta</div>
+                        </div>
+                        <div class="flashcard-back">
+                            <div class="flashcard-answer">
+                                • Estructura narrativa<br>
+                                • Contenido de diapositivas<br>
+                                • Titulares impactantes<br>
+                                • Notas del presentador<br>
+                                • Adaptación a la audiencia<br>
+                                • Analogías y ejemplos<br>
+                                • Llamados a la acción
+                            </div>
+                            <div class="flashcard-instruction"><i class="fas fa-sync-alt"></i> Haz clic para volver a la pregunta</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="flashcard" data-card-index="6" style="transform: translateX(calc(-50% + 10px)) rotate(15deg) translateY(55px); z-index: 1; opacity: 0.25;">
+                    <div class="flashcard-inner">
+                        <div class="flashcard-front">
+                            <div class="flashcard-question">¿Qué es una biblioteca personal de prompts y cuál es su beneficio principal?</div>
+                            <div class="flashcard-instruction"><i class="fas fa-sync-alt"></i> Haz clic para ver la respuesta</div>
+                        </div>
+                        <div class="flashcard-back">
+                            <div class="flashcard-answer">Es una colección organizada de instrucciones predefinidas para ChatGPT, personalizadas para tus comunicaciones recurrentes. Su beneficio principal es ahorrar tiempo (aproximadamente 3-5 horas semanales) mientras mantienes consistencia y calidad profesional en tus comunicaciones.</div>
+                            <div class="flashcard-instruction"><i class="fas fa-sync-alt"></i> Haz clic para volver a la pregunta</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="flashcard-controls">
+                    <button class="flashcard-control-button" id="shuffle-flashcards">
+                        <i class="fas fa-random"></i> Barajar tarjetas
+                    </button>
+                    <button class="flashcard-control-button" id="reset-flashcards">
+                        <i class="fas fa-redo"></i> Reiniciar
+                    </button>
+                </div>
+            </div>
+            
+            <div class="flashcards-navigation">
+                <button class="flashcards-nav-button" id="prev-flashcard" disabled="">
+                    <i class="fas fa-chevron-left"></i> Anterior
+                </button>
+                <div class="flashcards-progress">
+                    Tarjeta <span id="current-card">1</span> de <span id="total-cards">6</span>
+                </div>
+                <button class="flashcards-nav-button" id="next-flashcard">
+                    Siguiente <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+            
+            <div class="flashcards-help">
+                Usa los botones de navegación o las teclas de flecha para cambiar de tarjeta. Haz clic en cualquier tarjeta para ver su respuesta.
+            </div>
+        </section>
+        
+        <!-- Contenido principal -->
+        <section class="content-section">
+            <h2>El Impacto de las Comunicaciones en el Entorno Profesional</h2>
+            
+            <p>Las comunicaciones escritas siguen siendo el pilar fundamental de la actividad empresarial moderna. Independientemente del sector o rol, los profesionales dedican una parte significativa de su jornada a la creación, revisión y respuesta de diversos tipos de comunicaciones. Esta realidad se ha intensificado con la normalización del trabajo híbrido y remoto tras la pandemia.</p>
+            
+            <div class="data-card">
+                <div class="data-card-header">
+                    <div class="data-card-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="data-card-title">Tiempo Invertido en Comunicaciones</div>
+                </div>
+                <div class="data-stat">3.1 horas</div>
+                <div class="data-stat-description">Es el tiempo promedio que un profesional chileno dedica diariamente a gestionar correos electrónicos y redactar documentos según el Estudio de Productividad Laboral 2025.</div>
+            </div>
+            
+            <p>Este tiempo representa aproximadamente el 40% de una jornada laboral estándar, convirtiéndose en uno de los principales consumidores de recursos profesionales. Además, las comunicaciones no solo impactan en términos de tiempo, sino que son determinantes para:</p>
+            
+            <ul>
+                <li><strong>Percepción profesional:</strong> Tu capacidad de comunicación escrita influye directamente en cómo te perciben colegas, clientes y superiores.</li>
+                <li><strong>Efectividad operativa:</strong> Las instrucciones, solicitudes o explicaciones imprecisas generan errores y retrasos operativos.</li>
+                <li><strong>Desarrollo de carrera:</strong> Las habilidades de comunicación son consistentemente valoradas entre las principales competencias para ascensos y nuevas oportunidades.</li>
+                <li><strong>Gestión del estrés:</strong> La sobrecarga de comunicaciones pendientes es una de las principales fuentes de estrés laboral reportadas.</li>
+            </ul>
+            
+            <div class="chart-container">
+                <div class="chart-title">Distribución del Tiempo en Comunicaciones Profesionales</div>
+                <div class="bar-chart">
+                    <div class="bar-group">
+                        <div class="bar" style="height: 180px;">
+                            <div class="bar-value">42%</div>
+                        </div>
+                        <div class="bar-label">Correos Electrónicos</div>
+                    </div>
+                    <div class="bar-group">
+                        <div class="bar" style="height: 120px;">
+                            <div class="bar-value">28%</div>
+                        </div>
+                        <div class="bar-label">Informes y Reportes</div>
+                    </div>
+                    <div class="bar-group">
+                        <div class="bar" style="height: 70px;">
+                            <div class="bar-value">16%</div>
+                        </div>
+                        <div class="bar-label">Presentaciones</div>
+                    </div>
+                    <div class="bar-group">
+                        <div class="bar" style="height: 60px;">
+                            <div class="bar-value">14%</div>
+                        </div>
+                        <div class="bar-label">Otras Comunicaciones</div>
+                    </div>
+                </div>
+            </div>
+            
+            <p>Ante este escenario, la integración de ChatGPT como asistente de redacción representa una oportunidad sin precedentes para recuperar tiempo valioso y mejorar simultáneamente la calidad de tus comunicaciones profesionales.</p>
+            
+            <div class="image-container image-center">
+                <img src="./Seccion 1.4_files/photo-1423666639041-f56000c27a9a" alt="Profesional optimizando su tiempo en comunicaciones con IA" class="content-image" loading="lazy">
+                <div class="image-caption">
+                    <p>La integración de ChatGPT en los flujos de trabajo comunicativos puede liberar hasta un 50% del tiempo invertido en redacción</p>
+                    <span class="image-source">Estudio de Transformación Digital Chile 2025</span>
+                </div>
+            </div>
+        </section>
+        
+        <section class="content-section">
+            <h2>Optimizando Correos Electrónicos con ChatGPT</h2>
+            
+            <p>El correo electrónico continúa siendo el canal de comunicación profesional por excelencia, a pesar del surgimiento de plataformas de mensajería y colaboración. Sin embargo, es también una de las principales fuentes de pérdida de productividad cuando no se gestiona eficientemente. ChatGPT puede transformar radicalmente tu enfoque en la gestión de correos electrónicos:</p>
+            
+            <h3>Tipos de correos electrónicos que puedes optimizar con ChatGPT</h3>
+            
+            <div class="accordion-container">
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <span>Correos de seguimiento de ventas y clientes</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <p>Los correos de seguimiento a clientes potenciales o existentes requieren un balance perfecto entre persistencia y valor. ChatGPT puede ayudarte a:</p>
+                        <ul>
+                            <li>Generar recordatorios sutiles que no resulten invasivos</li>
+                            <li>Incluir información de valor adicional que justifique el contacto</li>
+                            <li>Personalizar el mensaje según la etapa del ciclo de ventas</li>
+                            <li>Adaptar el tono según el historial de interacciones previas</li>
+                        </ul>
+                        <div class="usage-example">
+                            <div class="usage-title">Ejemplo de prompt para correo de seguimiento:</div>
+                            <div class="usage-prompt">Necesito un correo de seguimiento para un cliente potencial que recibió nuestra propuesta de servicios de contabilidad hace 2 semanas y no ha respondido. Es una PYME del sector retail con 15 empleados. El contacto es María González, gerente administrativa. Nuestra propuesta incluía servicios mensuales por $450.000 CLP. Quiero recordarle nuestra propuesta, ofrecer una llamada de aclaración y mencionar un beneficio específico: automatización de declaraciones de IVA. Tono profesional pero cercano.</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <span>Comunicaciones internas y coordinación de equipos</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <p>Las comunicaciones efectivas al interior de los equipos son fundamentales para la productividad colectiva. ChatGPT puede ayudarte a:</p>
+                        <ul>
+                            <li>Estructurar instrucciones claras y precisas para tareas específicas</li>
+                            <li>Crear resúmenes de reuniones con puntos de acción claramente asignados</li>
+                            <li>Elaborar actualizaciones de estado de proyectos con formato estandarizado</li>
+                            <li>Redactar solicitudes de colaboración efectivas que generen respuestas positivas</li>
+                        </ul>
+                        <div class="usage-example">
+                            <div class="usage-title">Ejemplo de prompt para coordinación interna:</div>
+                            <div class="usage-prompt">Genera un correo para el equipo de marketing (5 personas) resumiendo los acuerdos de la reunión de hoy sobre el lanzamiento del producto. Puntos clave: 1) Fecha de lanzamiento confirmada: 15 de mayo, 2) Presupuesto aprobado: $5.000.000 CLP, 3) Necesitamos finalizar materiales gráficos antes del 30 de abril, 4) Juan se encargará de coordinar con prensa, 5) Carolina debe terminar el plan de redes sociales. Tono motivador pero directo. Incluye una sección de "Próximos pasos" con responsables y fechas.</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <span>Gestión de conflictos y situaciones delicadas</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <p>Las comunicaciones en situaciones de tensión requieren especial cuidado y equilibrio. ChatGPT puede ayudarte a:</p>
+                        <ul>
+                            <li>Formular respuestas diplomáticas a quejas o reclamos</li>
+                            <li>Estructurar comunicaciones que reconozcan errores de manera profesional</li>
+                            <li>Desarrollar mensajes que aborden desacuerdos sin escalación</li>
+                            <li>Crear comunicaciones que establezcan límites de manera respetuosa</li>
+                        </ul>
+                        <div class="usage-example">
+                            <div class="usage-title">Ejemplo de prompt para situaciones delicadas:</div>
+                            <div class="usage-prompt">Necesito responder a un cliente insatisfecho con nuestra entrega (llegó con 3 días de retraso). El cliente es valioso (compras mensuales por más de $2 millones CLP) y amenaza con cambiar de proveedor. Quiero: 1) Reconocer el error sin excusas, 2) Ofrecer una compensación razonable (descuento del 15% en próxima compra), 3) Explicar brevemente las medidas que implementaremos para evitar futuros retrasos, 4) Reafirmar el valor que damos a su confianza. Tono: Empático, responsable y orientado a soluciones.</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <span>Comunicaciones formales y administrativas</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <p>Las comunicaciones administrativas requieren precisión, claridad y adherencia a formatos específicos. ChatGPT puede ayudarte a:</p>
+                        <ul>
+                            <li>Generar solicitudes formales a entidades o departamentos</li>
+                            <li>Desarrollar comunicados organizacionales sobre cambios o políticas</li>
+                            <li>Crear notificaciones oficiales con el lenguaje y estructura apropiados</li>
+                            <li>Redactar resúmenes ejecutivos de información compleja</li>
+                        </ul>
+                        <div class="usage-example">
+                            <div class="usage-title">Ejemplo de prompt para comunicación administrativa:</div>
+                            <div class="usage-prompt">Redacta un correo formal para todos los empleados (120 personas) anunciando el nuevo procedimiento de solicitud de vacaciones. Puntos principales: 1) A partir del 1 de junio utilizaremos la plataforma HR-Connect, 2) Las solicitudes deben hacerse con mínimo 15 días de anticipación, 3) Se requiere confirmación del jefe directo, 4) Habrá capacitaciones sobre el nuevo sistema el 20 y 22 de mayo. Incluye un párrafo explicando que este cambio busca agilizar las aprobaciones y mejorar la planificación. Tono: Formal pero accesible. Formato: Conciso con viñetas para los pasos principales.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <h3>Estrategias avanzadas para optimizar correos con ChatGPT</h3>
+            
+            <p>Más allá de la generación básica de correos, existen técnicas avanzadas que pueden multiplicar tu eficiencia:</p>
+            
+            <ol>
+                <li><strong>Creación de plantillas personalizadas:</strong> Desarrolla con ChatGPT plantillas base para tus tipos de comunicación más frecuentes que puedas adaptar rápidamente a cada caso específico.</li>
+                <li><strong>Mejora de borradores existentes:</strong> Envía a ChatGPT tus borradores actuales solicitando mejoras específicas en claridad, concisión o tono.</li>
+                <li><strong>Adaptación cultural y contextual:</strong> Utiliza ChatGPT para adaptar tus mensajes a diferentes contextos culturales, especialmente útil para comunicaciones internacionales.</li>
+                <li><strong>Creación de respuestas tipo para consultas frecuentes:</strong> Desarrolla un repertorio de respuestas estándar para las preguntas más comunes en tu ámbito.</li>
+                <li><strong>Análisis y mejora del tono emocional:</strong> Solicita a ChatGPT que evalúe y ajuste el tono emocional de tus comunicaciones para asegurar el impacto deseado.</li>
+            </ol>
+            
+            <div class="image-container image-center">
+                <img src="./Seccion 1.4_files/photo-1517697471339-4aa32003c11a" alt="Profesional utilizando ChatGPT para mejorar sus comunicaciones por correo" class="content-image" loading="lazy">
+                <div class="image-caption">
+                    <p>El uso estratégico de ChatGPT permite mantener una comunicación consistente y efectiva incluso en momentos de alta demanda</p>
+                    <span class="image-source">Imagen representativa - 2025</span>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Video explicativo corto -->
+        <div class="video-container" style="width: 100%; max-width: 960px; margin: 25px auto; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);">
+            <div class="video-header" style="background: linear-gradient(135deg, #0A4A9D, #3B77C6); padding: 15px 20px; color: white;">
+                <h3 style="margin: 0; font-size: 1.3rem; display: flex; align-items: center; color: white;">
+                    <i class="fas fa-video" style="margin-right: 10px;"></i> 5 Técnicas Avanzadas para Optimizar tus Correos con ChatGPT
+                </h3>
+            </div>
+            <div class="video-description" style="background-color: #f9f9f9; padding: 12px 20px; border-bottom: 1px solid #eee;">
+                <p style="margin: 0; color: #555;">Estrategias prácticas para redactar correos profesionales más efectivos en menos tiempo utilizando ChatGPT</p>
+            </div>
+            <div class="video-frame-container" style="position: relative; width: 100%; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+                <iframe src="./Seccion 1.4_files/1074914528.html" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" title="5 Técnicas Avanzadas para Optimizar tus Correos con ChatGPT"></iframe>
+            </div>
+        </div>
+        
+        <section class="content-section">
+            <h2>Creando Informes y Reportes de Impacto con ChatGPT</h2>
+            
+            <p>Los informes y reportes son elementos fundamentales en la gestión empresarial, pero su creación suele ser una de las tareas más demandantes y complejas. ChatGPT puede transformar este proceso, permitiéndote generar documentos bien estructurados, claros y persuasivos en una fracción del tiempo habitual.</p>
+            
+            <h3>Principales tipos de informes optimizables con ChatGPT</h3>
+            
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Tipo de Informe</th>
+                        <th>Beneficios de ChatGPT</th>
+                        <th>Consideraciones Específicas</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Informes de gestión</td>
+                        <td>
+                            <ul>
+                                <li>Estructura coherente y profesional</li>
+                                <li>Transformación de datos en narrativas significativas</li>
+                                <li>Generación de resúmenes ejecutivos concisos</li>
+                            </ul>
+                        </td>
+                        <td>Requiere datos específicos y contextuales para generar análisis relevantes. Óptimo para interpretación de tendencias.</td>
+                    </tr>
+                    <tr>
+                        <td>Reportes de análisis de mercado</td>
+                        <td>
+                            <ul>
+                                <li>Identificación de patrones y tendencias</li>
+                                <li>Estructuración comparativa de competidores</li>
+                                <li>Transformación de datos en insights accionables</li>
+                            </ul>
+                        </td>
+                        <td>Importante proporcionar datos actualizados y específicos del mercado chileno. Funciona mejor cuando se proporciona un marco analítico claro.</td>
+                    </tr>
+                    <tr>
+                        <td>Informes de avance de proyectos</td>
+                        <td>
+                            <ul>
+                                <li>Estructuración clara por etapas o hitos</li>
+                                <li>Consistencia en el formato a lo largo del tiempo</li>
+                                <li>Identificación de riesgos y oportunidades</li>
+                            </ul>
+                        </td>
+                        <td>Ideal para reportes recurrentes donde la estructura permanece constante. Requiere actualización de datos específicos en cada iteración.</td>
+                    </tr>
+                    <tr>
+                        <td>Reportes financieros</td>
+                        <td>
+                            <ul>
+                                <li>Transformación de datos numéricos en narrativas comprensibles</li>
+                                <li>Explicación de variaciones y desviaciones</li>
+                                <li>Creación de secciones de perspectivas futuras</li>
+                            </ul>
+                        </td>
+                        <td>Debe complementarse con verificación profesional. Importantes consideraciones de cumplimiento normativo según regulaciones chilenas.</td>
+                    </tr>
+                    <tr>
+                        <td>Informes técnicos</td>
+                        <td>
+                            <ul>
+                                <li>Simplificación de conceptos complejos</li>
+                                <li>Adaptación del nivel técnico según la audiencia</li>
+                                <li>Creación de glosarios y secciones explicativas</li>
+                            </ul>
+                        </td>
+                        <td>Requiere validación técnica posterior. Excelente para crear versiones de un mismo informe para diferentes audiencias (técnicas y no técnicas).</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <h3>El proceso de creación de informes con ChatGPT</h3>
+            
+            <p>Para maximizar los beneficios de ChatGPT en la creación de informes, es recomendable seguir un proceso estructurado:</p>
+            
+            <ol>
+                <li><strong>Definición del esquema:</strong> Utiliza ChatGPT para generar la estructura general del informe basada en objetivos, audiencia y tipo de documento.</li>
+                <li><strong>Generación de secciones clave:</strong> Desarrolla cada sección principal proporcionando los datos específicos y el enfoque deseado.</li>
+                <li><strong>Enriquecimiento con análisis:</strong> Solicita a ChatGPT que proporcione interpretaciones, análisis de tendencias o recomendaciones basadas en los datos.</li>
+                <li><strong>Refinamiento de lenguaje y tono:</strong> Ajusta el nivel de formalidad, tecnicidad y profundidad según la audiencia objetivo.</li>
+                <li><strong>Creación de elementos complementarios:</strong> Genera resúmenes ejecutivos, conclusiones, recomendaciones y próximos pasos.</li>
+                <li><strong>Revisión y edición final:</strong> Utiliza ChatGPT para identificar inconsistencias o áreas de mejora en el documento completo.</li>
+            </ol>
+            
+            <div class="usage-example">
+                <div class="usage-title">Ejemplo de prompt para generación de estructura de informe:</div>
+                <div class="usage-prompt">Genera la estructura detallada para un informe trimestral de ventas dirigido al directorio de una empresa de retail en Chile. El informe debe incluir: análisis de ventas por categoría y región, comparativa con el mismo trimestre del año anterior, análisis de márgenes, principales campañas y su rendimiento, y perspectivas para el próximo trimestre. Para cada sección, proporciona 3-4 subsecciones específicas y el tipo de datos/gráficos que deberían incluirse. La extensión total del informe debe ser de aproximadamente 15 páginas.</div>
+                <div class="usage-response">
+                    <p><strong>ESTRUCTURA: INFORME TRIMESTRAL DE VENTAS Q2 2025</strong></p>
+                    <p><strong>1. RESUMEN EJECUTIVO (1 página)</strong><br>
+                    • Indicadores clave de desempeño (KPIs principales)<br>
+                    • Comparativa interanual resumida<br>
+                    • Hallazgos principales y recomendaciones estratégicas</p>
+                    <p><strong>2. ANÁLISIS DE VENTAS POR CATEGORÍA (3 páginas)</strong><br>
+                    • Desempeño por categoría principal (tabla comparativa y gráfico de barras)<br>
+                    • Análisis de productos destacados por categoría (gráfico de dispersión: volumen vs. margen)<br>
+                    • Tendencias emergentes por categoría (gráficos de línea de tendencia trimestral)<br>
+                    • Oportunidades de crecimiento identificadas</p>
+                    
+                    <p><em>[Estructura completa continuaría con todas las secciones...]</em></p>
+                </div>
+            </div>
+            
+            <p>Este enfoque permite aprovechar las fortalezas de ChatGPT mientras mantienes el control sobre el contenido y enfoque estratégico del informe.</p>
+        </section>
+        
+        <section class="content-section">
+            <h2>Potenciando Presentaciones Profesionales</h2>
+            
+            <p>Las presentaciones constituyen uno de los formatos más importantes para la comunicación ejecutiva y la persuasión en entornos profesionales. ChatGPT puede ayudarte a crear presentaciones más impactantes, coherentes y persuasivas:</p>
+            
+            <h3>Elementos de presentaciones que ChatGPT puede ayudarte a optimizar</h3>
+            
+            <ul>
+                <li><strong>Estructura narrativa:</strong> Desarrolla un hilo conductor claro que mantenga la atención y coherencia a lo largo de toda la presentación.</li>
+                <li><strong>Contenido de diapositivas:</strong> Crea contenido conciso, relevante y orientado a la acción para cada diapositiva.</li>
+                <li><strong>Titulares impactantes:</strong> Transforma títulos descriptivos en mensajes persuasivos y memorables.</li>
+                <li><strong>Notas del presentador:</strong> Genera guiones y puntos clave para acompañar cada diapositiva y fortalecer tu presentación oral.</li>
+                <li><strong>Adaptación a la audiencia:</strong> Ajusta enfoque, tecnicidad y elementos de persuasión según el perfil específico de tus oyentes.</li>
+                <li><strong>Analogías y ejemplos:</strong> Crea comparaciones, metáforas y ejemplos relevantes que clarifiquen conceptos complejos.</li>
+                <li><strong>Llamados a la acción:</strong> Desarrolla conclusiones y siguientes pasos que impulsen decisiones concretas.</li>
+            </ul>
+            
+            <div class="usage-example">
+                <div class="usage-title">Ejemplo de prompt para mejorar una presentación:</div>
+                <div class="usage-prompt">Tengo una presentación sobre la implementación de un nuevo sistema de gestión documental para mi empresa. La audiencia son directivos no técnicos que buscan principalmente ROI y beneficios operativos. Necesito que me ayudes a:
+
+1. Crear un título más impactante que "Implementación de nuevo sistema documental"
+2. Desarrollar 5 titulares persuasivos para las principales diapositivas
+3. Generar una analogía simplificada que explique cómo funcionará el sistema para no técnicos
+4. Crear un llamado a la acción final que impulse la aprobación del presupuesto (estimado en $25 millones CLP)
+
+El sistema reducirá tiempo de búsqueda de documentos en 70%, cumplirá con normativas de la CMF, y tendrá ROI estimado de 14 meses.</div>
+            </div>
+            
+            <h3>Técnicas avanzadas para presentaciones con ChatGPT</h3>
+            
+            <ol>
+                <li><strong>Storyboarding:</strong> Utiliza ChatGPT para crear la narrativa completa de la presentación, asegurando una progresión lógica y persuasiva.</li>
+                <li><strong>Personalización por audiencia:</strong> Genera variantes de la misma presentación adaptadas a diferentes audiencias (ej: técnica, ejecutiva, comercial).</li>
+                <li><strong>Creación de escenarios:</strong> Desarrolla escenarios hipotéticos o casos de uso que ilustren tu mensaje principal de forma concreta.</li>
+                <li><strong>Preparación para preguntas:</strong> Anticipa posibles objeciones o preguntas y prepara respuestas persuasivas.</li>
+                <li><strong>Simplificación visual:</strong> Transforma conceptos complejos en descripciones de elementos visuales que apoyen tu mensaje.</li>
+            </ol>
+            
+            <div class="image-container image-center">
+                <img src="./Seccion 1.4_files/photo-1542744173-8e7e53415bb0" alt="Profesional realizando una presentación de alto impacto" class="content-image" loading="lazy">
+                <div class="image-caption">
+                    <p>Las presentaciones desarrolladas con apoyo de ChatGPT pueden lograr un 40% más de retención de mensajes clave</p>
+                    <span class="image-source">Estudio de Comunicación Ejecutiva 2025</span>
+                </div>
+            </div>
+        </section>
+        
+
+        
+        <!-- Ejercicio de completar espacios en blanco -->
+        <div class="exercise-container">
+            <div class="exercise-header">
+                <div class="exercise-icon">
+                    <i class="fas fa-pencil-alt"></i>
+                </div>
+                <div class="exercise-title">Ejercicio: Prompts específicos para distintos tipos de comunicación profesional</div>
+            </div>
+            
+            <div class="exercise-description">
+                <p>Completa los espacios en blanco para crear prompts efectivos para diferentes tipos de comunicaciones profesionales. Arrastra las opciones correctas a cada espacio.</p>
+            </div>
+            
+            <div class="fill-blanks-container">
+                <div class="fill-blanks-text">
+                    <p><strong>Prompt para correo de respuesta a un cliente insatisfecho:</strong></p>
+                    <p>Actúa como un <input type="text" class="fill-blanks-input" data-answer="representante de servicio al cliente" readonly="" style="border-color: rgb(108, 117, 125);">. Necesito responder a un reclamo sobre <input type="text" class="fill-blanks-input" data-answer="retrasos en la entrega" readonly="" style="border-color: rgb(108, 117, 125);"> de un cliente importante. El tono debe ser <input type="text" class="fill-blanks-input" data-answer="empático y orientado a soluciones" readonly="" style="border-color: rgb(108, 117, 125);">. Incluye: 1) Una disculpa sincera sin excusas, 2) Explicación breve de la situación, 3) <input type="text" class="fill-blanks-input" data-answer="Una compensación concreta" readonly="" style="border-color: rgb(108, 117, 125);">, 4) Garantías de mejora con acciones específicas.</p>
+                    
+                    <p><strong>Prompt para informe de resultados trimestrales:</strong></p>
+                    <p>Necesito crear un informe de resultados del Q2 para <input type="text" class="fill-blanks-input" data-answer="el equipo directivo" readonly="" style="border-color: rgb(108, 117, 125);">. El enfoque principal debe ser <input type="text" class="fill-blanks-input" data-answer="el análisis de variaciones respecto al presupuesto" readonly="" style="border-color: rgb(108, 117, 125);">. Estructura requerida: 1) Resumen ejecutivo (máximo 200 palabras), 2) Resultados financieros clave, 3) <input type="text" class="fill-blanks-input" data-answer="Análisis de desviaciones" readonly="" style="border-color: rgb(108, 117, 125);">, 4) Proyección actualizada, 5) Recomendaciones estratégicas. Usa un tono <input type="text" class="fill-blanks-input" data-answer="analítico y basado en datos" readonly="" style="border-color: rgb(108, 117, 125);">.</p>
+                </div>
+                
+                <div class="fill-blanks-options">
+                    <div class="fill-blanks-option" draggable="true" style="display: block;">representante de servicio al cliente</div>
+                    <div class="fill-blanks-option" draggable="true" style="display: block;">retrasos en la entrega</div>
+                    <div class="fill-blanks-option" draggable="true" style="display: block;">empático y orientado a soluciones</div>
+                    <div class="fill-blanks-option" draggable="true" style="display: block;">Una compensación concreta</div>
+                    <div class="fill-blanks-option" draggable="true" style="display: block;">el equipo directivo</div>
+                    <div class="fill-blanks-option" draggable="true" style="display: block;">el análisis de variaciones respecto al presupuesto</div>
+                    <div class="fill-blanks-option" draggable="true" style="display: block;">Análisis de desviaciones</div>
+                    <div class="fill-blanks-option" draggable="true" style="display: block;">analítico y basado en datos</div>
+                </div>
+            </div>
+            
+            <div class="exercise-buttons">
+                <button id="check-blanks-btn" class="exercise-btn check-btn">Verificar Respuestas</button>
+                <button id="reset-blanks-btn" class="exercise-btn reset-btn">Reiniciar</button>
+            </div>
+            
+            <div id="blanks-feedback" class="exercise-feedback feedback-neutral" style="display: none;"><strong>Revisa tus respuestas.</strong> Algunas opciones no están en el lugar correcto. Recuerda que cada elemento debe ser coherente con el contexto de la comunicación.</div>
+        </div>
+        
+        <!-- Microproyecto progresivo -->
+        <div class="project-container">
+            <div class="project-header">
+                <div class="project-icon">
+                    <i class="fas fa-project-diagram"></i>
+                </div>
+                <div class="project-title">Microproyecto: Creación de Biblioteca Personal de Prompts</div>
+            </div>
+            
+            <p>Construyamos una herramienta que te ahorrará horas de trabajo semanal: tu biblioteca personalizada de prompts para comunicaciones recurrentes.</p>
+            
+            <div class="project-steps">
+                <div class="project-step">
+                    <div class="project-step-header">
+                        <div class="project-step-number">1</div>
+                        <div class="project-step-title">Identificación de comunicaciones frecuentes</div>
+                    </div>
+                    <p>Identifica 5 tipos de comunicaciones que realizas con mayor frecuencia en tu trabajo. Ejemplos comunes incluyen:</p>
+                    <ul>
+                        <li>Reportes de avance de proyectos</li>
+                        <li>Respuestas a consultas técnicas</li>
+                        <li>Solicitudes de información a colegas</li>
+                        <li>Correos de seguimiento a clientes</li>
+                        <li>Presentaciones de propuestas internas</li>
+                    </ul>
+                    <p>Para cada una, anota el propósito específico, audiencia típica y resultado deseado.</p>
+                </div>
+                
+                <div class="project-step">
+                    <div class="project-step-header">
+                        <div class="project-step-number">2</div>
+                        <div class="project-step-title">Creación de prompt maestro para cada tipo</div>
+                    </div>
+                    <p>Siguiendo la plantilla proporcionada, crea un prompt maestro para cada tipo de comunicación que identificaste:</p>
+                    <div class="template-container">
+Tipo de comunicación: [TIPO DE COMUNICACIÓN]
+Audiencia: [AUDIENCIA TÍPICA]
+Propósito: [OBJETIVO ESPECÍFICO]
+
+Prompt maestro:
+"Actúa como [ROL RELEVANTE]. Necesito crear [TIPO DE COMUNICACIÓN] para [AUDIENCIA] con el objetivo de [PROPÓSITO].
+
+Contexto específico:
+[ESPACIO PARA AÑADIR DETALLES CONTEXTUALES ESPECÍFICOS DE CADA CASO]
+
+La comunicación debe incluir:
+1. [ELEMENTO ESTRUCTURAL 1]
+2. [ELEMENTO ESTRUCTURAL 2]
+3. [ELEMENTO ESTRUCTURAL 3]
+4. [ELEMENTO ESTRUCTURAL 4]
+
+Tono y estilo: [ESPECIFICACIÓN DE TONO]
+Extensión aproximada: [EXTENSIÓN DESEADA]
+Consideraciones adicionales: [RESTRICCIONES O REQUISITOS ESPECIALES]"
+                    </div>
+                </div>
+                
+                <div class="project-step">
+                    <div class="project-step-header">
+                        <div class="project-step-number">3</div>
+                        <div class="project-step-title">Refinamiento y pruebas</div>
+                    </div>
+                    <p>Prueba cada prompt con casos reales y refina basándote en los resultados:</p>
+                    <ol>
+                        <li>Utiliza el prompt maestro completando las variables específicas del caso.</li>
+                        <li>Evalúa si la respuesta de ChatGPT requiere muchas modificaciones posteriores.</li>
+                        <li>Ajusta elementos del prompt para mejorar la precisión y reducir ajustes manuales.</li>
+                        <li>Añade ejemplos o restricciones adicionales si es necesario.</li>
+                        <li>Documenta las versiones mejoradas de cada prompt.</li>
+                    </ol>
+                </div>
+                
+                <div class="project-step">
+                    <div class="project-step-header">
+                        <div class="project-step-number">4</div>
+                        <div class="project-step-title">Organización y acceso rápido</div>
+                    </div>
+                    <p>Crea un sistema para acceder rápidamente a tu biblioteca de prompts:</p>
+                    <ul>
+                        <li>Organiza tus prompts en un documento o aplicación de notas de fácil acceso.</li>
+                        <li>Crea un sistema de etiquetas o categorías para encontrar rápidamente lo que necesitas.</li>
+                        <li>Considera usar herramientas como Notion, Google Docs o aplicaciones especializadas.</li>
+                        <li>Implementa un proceso de revisión periódica para mantener actualizada tu biblioteca.</li>
+                    </ul>
+                </div>
+                
+                <div class="project-step">
+                    <div class="project-step-header">
+                        <div class="project-step-number">5</div>
+                        <div class="project-step-title">Medición de impacto</div>
+                    </div>
+                    <p>Evalúa el impacto de tu biblioteca de prompts en tu productividad:</p>
+                    <ul>
+                        <li>Registra el tiempo aproximado que te tomaba cada tipo de comunicación antes.</li>
+                        <li>Mide el tiempo actual utilizando tu biblioteca de prompts.</li>
+                        <li>Anota cualquier mejora en la calidad o efectividad de tus comunicaciones.</li>
+                        <li>Calcula el ahorro de tiempo semanal y mensual.</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="exercise-feedback feedback-positive" style="display: block; margin-top: var(--spacing-lg);">
+                <p><strong>Beneficio esperado:</strong> Has creado una valiosa herramienta de productividad. Con esta biblioteca de prompts, podrás automatizar gran parte de tus comunicaciones rutinarias mientras mantienes tu tono personal y profesional. El ahorro de tiempo estimado es de 3-5 horas semanales para un profesional promedio.</p>
+            </div>
+        </div>
+        
+        <!-- Transición siguiente sección -->
+        <div class="next-section-transition">
+            <p>Ahora es momento de consolidar todo lo aprendido en este primer módulo y verificar tu comprensión de los conceptos fundamentales para sacar el máximo provecho de ChatGPT en tus tareas administrativas diarias.</p>
+        </div>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Funcionalidad para los acordeones
+            const accordionHeaders = document.querySelectorAll('.accordion-header');
+            
+            accordionHeaders.forEach(header => {
+                header.addEventListener('click', function() {
+                    const accordionItem = this.parentElement;
+                    accordionItem.classList.toggle('active');
+                });
+            });
+            
+            // Funcionalidad para el ejercicio de completar espacios
+            const fillBlanksInputs = document.querySelectorAll('.fill-blanks-input');
+            const fillBlanksOptions = document.querySelectorAll('.fill-blanks-option');
+            const checkBlanksBtn = document.getElementById('check-blanks-btn');
+            const resetBlanksBtn = document.getElementById('reset-blanks-btn');
+            const blanksFeedback = document.getElementById('blanks-feedback');
+            
+            // Configurar opciones arrastrables
+            fillBlanksOptions.forEach(option => {
+                option.addEventListener('dragstart', function(e) {
+                    e.dataTransfer.setData('text/plain', this.textContent);
+                    setTimeout(() => {
+                        this.classList.add('dragging');
+                    }, 0);
+                });
+                
+                option.addEventListener('dragend', function() {
+                    this.classList.remove('dragging');
+                });
+                
+                option.addEventListener('click', function() {
+                    // Encontrar el primer input vacío y llenarlo al hacer clic
+                    const emptyInput = document.querySelector('.fill-blanks-input:not([value])');
+                    if (emptyInput) {
+                        emptyInput.value = this.textContent;
+                        this.style.display = 'none';
+                    }
+                });
+            });
+            
+            // Configurar inputs para recibir elementos arrastrados
+            fillBlanksInputs.forEach(input => {
+                input.addEventListener('dragover', function(e) {
+                    e.preventDefault();
+                    this.classList.add('drag-over');
+                });
+                
+                input.addEventListener('dragleave', function() {
+                    this.classList.remove('drag-over');
+                });
+                
+                input.addEventListener('drop', function(e) {
+                    e.preventDefault();
+                    this.classList.remove('drag-over');
+                    
+                    const data = e.dataTransfer.getData('text/plain');
+                    this.value = data;
+                    
+                    // Ocultar la opción que fue arrastrada
+                    const draggedOption = Array.from(fillBlanksOptions).find(option => option.textContent === data);
+                    if (draggedOption) {
+                        draggedOption.style.display = 'none';
+                    }
+                });
+            });
+            
+            // Verificar respuestas
+            checkBlanksBtn.addEventListener('click', function() {
+                let allCorrect = true;
+                let totalAnswered = 0;
+                
+                fillBlanksInputs.forEach(input => {
+                    if (input.value) {
+                        totalAnswered++;
+                        
+                        if (input.value === input.dataset.answer) {
+                            input.style.borderColor = '#28a745';
+                        } else {
+                            input.style.borderColor = '#dc3545';
+                            allCorrect = false;
+                        }
+                    } else {
+                        allCorrect = false;
+                    }
+                });
+                
+                if (totalAnswered === 0) {
+                    blanksFeedback.textContent = "Por favor, completa al menos un espacio antes de verificar.";
+                    blanksFeedback.className = "exercise-feedback feedback-neutral";
+                    blanksFeedback.style.display = "block";
+                } else if (allCorrect && totalAnswered === fillBlanksInputs.length) {
+                    blanksFeedback.innerHTML = "<strong>¡Excelente!</strong> Has completado correctamente todos los prompts. Estos formatos te servirán como base para crear tus propios prompts personalizados para diferentes tipos de comunicaciones profesionales.";
+                    blanksFeedback.className = "exercise-feedback feedback-positive";
+                    blanksFeedback.style.display = "block";
+                } else if (allCorrect) {
+                    blanksFeedback.innerHTML = "<strong>¡Muy bien!</strong> Tus respuestas hasta ahora son correctas. Sigue completando el resto de los espacios.";
+                    blanksFeedback.className = "exercise-feedback feedback-positive";
+                    blanksFeedback.style.display = "block";
+                } else {
+                    blanksFeedback.innerHTML = "<strong>Revisa tus respuestas.</strong> Algunas opciones no están en el lugar correcto. Recuerda que cada elemento debe ser coherente con el contexto de la comunicación.";
+                    blanksFeedback.className = "exercise-feedback feedback-neutral";
+                    blanksFeedback.style.display = "block";
+                }
+            });
+            
+            // Reiniciar ejercicio
+            resetBlanksBtn.addEventListener('click', function() {
+                fillBlanksInputs.forEach(input => {
+                    input.value = '';
+                    input.style.borderColor = '#6c757d';
+                });
+                
+                fillBlanksOptions.forEach(option => {
+                    option.style.display = 'block';
+                });
+                
+                blanksFeedback.style.display = "none";
+            });
+            
+            // Animación de barras del gráfico
+            const bars = document.querySelectorAll('.bar');
+            
+            setTimeout(() => {
+                bars.forEach(bar => {
+                    const height = bar.style.height;
+                    bar.style.height = '0';
+                    
+                    setTimeout(() => {
+                        bar.style.height = height;
+                    }, 100);
+                });
+            }, 500);
+            
+            // SISTEMA MEJORADO DE FLASHCARDS
+            const flashcards = document.querySelectorAll('.flashcard');
+            const prevBtn = document.getElementById('prev-flashcard');
+            const nextBtn = document.getElementById('next-flashcard');
+            const currentCardSpan = document.getElementById('current-card');
+            const totalCardsSpan = document.getElementById('total-cards');
+            const shuffleBtn = document.getElementById('shuffle-flashcards');
+            const resetBtn = document.getElementById('reset-flashcards');
+            
+            let currentCardIndex = 0;
+            const totalCards = flashcards.length;
+            
+            // Inicializar contador de tarjetas
+            totalCardsSpan.textContent = totalCards;
+            currentCardSpan.textContent = currentCardIndex + 1;
+            
+            // Función para mostrar la tarjeta actual y ocultar las demás
+            function showCurrentCard() {
+                flashcards.forEach((card, index) => {
+                    if (index === currentCardIndex) {
+                        // Mostrar tarjeta actual con índice z más alto
+                        card.style.zIndex = 10;
+                        card.style.transform = 'translateX(-50%) rotate(0) translateY(-10px)';
+                        card.style.opacity = '1';
+                    } else {
+                        // Ajustar posición según índice relativo
+                        const distance = index - currentCardIndex;
+                        const rotation = distance * 3; // grados de rotación
+                        const yOffset = Math.abs(distance) * 10 + 5; // desplazamiento vertical
+                        const xOffset = distance * 2; // pequeño desplazamiento horizontal
+                        
+                        card.style.transform = `translateX(calc(-50% + ${xOffset}px)) rotate(${rotation}deg) translateY(${yOffset}px)`;
+                        card.style.zIndex = 6 - Math.abs(distance);
+                        card.style.opacity = 1 - (Math.abs(distance) * 0.15);
+                    }
+                    
+                    // Restaurar si está volteada
+                    if (card.classList.contains('flipped') && index !== currentCardIndex) {
+                        card.classList.remove('flipped');
+                    }
+                });
+                
+                // Actualizar contador y estado de botones
+                currentCardSpan.textContent = currentCardIndex + 1;
+                prevBtn.disabled = currentCardIndex === 0;
+                nextBtn.disabled = currentCardIndex === totalCards - 1;
+            }
+            
+            // Navegar a la tarjeta anterior
+            prevBtn.addEventListener('click', function() {
+                if (currentCardIndex > 0) {
+                    currentCardIndex--;
+                    showCurrentCard();
+                }
+            });
+            
+            // Navegar a la siguiente tarjeta
+            nextBtn.addEventListener('click', function() {
+                if (currentCardIndex < totalCards - 1) {
+                    currentCardIndex++;
+                    showCurrentCard();
+                }
+            });
+            
+            // Función para voltear tarjetas al hacer clic
+            flashcards.forEach(card => {
+                card.addEventListener('click', function() {
+                    // Solo voltea la tarjeta si es la tarjeta actualmente visible
+                    if (parseInt(card.dataset.cardIndex) - 1 === currentCardIndex) {
+                        this.classList.toggle('flipped');
+                    } else {
+                        // Si no es la tarjeta actual, navega a ella
+                        currentCardIndex = parseInt(card.dataset.cardIndex) - 1;
+                        showCurrentCard();
+                    }
+                });
+            });
+            
+            // Función para barajar las tarjetas
+            shuffleBtn.addEventListener('click', function() {
+                // Crear array con índices
+                const indices = Array.from({ length: totalCards }, (_, i) => i);
+                
+                // Algoritmo de Fisher-Yates para barajar
+                for (let i = indices.length - 1; i > 0; i--) {
+                    const j = Math.floor(Math.random() * (i + 1));
+                    [indices[i], indices[j]] = [indices[j], indices[i]];
+                }
+                
+                // Reordenar tarjetas según nuevos índices
+                const cardsContainer = document.querySelector('.flashcards-container');
+                indices.forEach(index => {
+                    cardsContainer.appendChild(flashcards[index]);
+                });
+                
+                // Reiniciar a la primera tarjeta
+                currentCardIndex = 0;
+                showCurrentCard();
+            });
+            
+            // Función para reiniciar las tarjetas
+            resetBtn.addEventListener('click', function() {
+                // Restaurar al orden original según data-card-index
+                const sortedCards = Array.from(flashcards).sort((a, b) => {
+                    return parseInt(a.dataset.cardIndex) - parseInt(b.dataset.cardIndex);
+                });
+                
+                const cardsContainer = document.querySelector('.flashcards-container');
+                sortedCards.forEach(card => {
+                    // Quitar clase flipped
+                    card.classList.remove('flipped');
+                    cardsContainer.appendChild(card);
+                });
+                
+                // Reiniciar a la primera tarjeta
+                currentCardIndex = 0;
+                showCurrentCard();
+            });
+            
+            // Navegación con teclado
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'ArrowLeft') {
+                    // Izquierda: tarjeta anterior
+                    if (currentCardIndex > 0) {
+                        currentCardIndex--;
+                        showCurrentCard();
+                    }
+                } else if (e.key === 'ArrowRight') {
+                    // Derecha: siguiente tarjeta
+                    if (currentCardIndex < totalCards - 1) {
+                        currentCardIndex++;
+                        showCurrentCard();
+                    }
+                } else if (e.key === ' ' || e.key === 'Enter') {
+                    // Espacio o Enter: voltear tarjeta actual
+                    flashcards[currentCardIndex].classList.toggle('flipped');
+                    e.preventDefault(); // Evitar scroll con espacio
+                }
+            });
+            
+            // Inicializar el sistema de tarjetas
+            showCurrentCard();
+        });
+    </script>
+        });
+    
+
+
+</body></html>

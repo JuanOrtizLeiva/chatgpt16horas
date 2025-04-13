@@ -1,0 +1,1304 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configuración y Acceso a ChatGPT: Primeros Pasos para Profesionales</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta name="description" content="Aprende a configurar y acceder correctamente a ChatGPT para uso profesional en Chile.">
+    <style>
+        :root {
+            /* Paleta de colores - Combo B */
+            --color-primario: #0A4A9D;
+            --color-primario-grad: #3B77C6;
+            --color-acento-1: #00BFA5;
+            --color-acento-2: #757575;
+            --color-texto: #212529;
+            --color-fondo: #FFFFFF;
+            --color-fondo-alt: #F1F3F5;
+            --color-blanco: #FFFFFF;
+            
+            /* Espaciado */
+            --spacing-xs: 0.5rem;
+            --spacing-sm: 1rem;
+            --spacing-md: 1.5rem;
+            --spacing-lg: 2rem;
+            --spacing-xl: 3rem;
+            --spacing-xxl: 5rem;
+            
+            /* Bordes y sombras */
+            --border-radius-sm: 4px;
+            --border-radius-md: 8px;
+            --border-radius-lg: 12px;
+            --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+            --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 6px 16px rgba(0, 0, 0, 0.1);
+            
+            /* Transiciones */
+            --transition-fast: 0.2s ease;
+            --transition-normal: 0.3s ease;
+            --transition-slow: 0.5s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--color-texto);
+            background-color: var(--color-fondo);
+            padding: 0;
+            margin: 0;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: var(--spacing-md);
+        }
+        
+        /* Encabezado de sección */
+        .section-header {
+            background: linear-gradient(135deg, var(--color-primario), var(--color-primario-grad));
+            color: var(--color-blanco);
+            padding: var(--spacing-lg) var(--spacing-md);
+            border-radius: var(--border-radius-md);
+            margin-bottom: var(--spacing-xl);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .section-header h1 {
+            font-size: 2.2rem;
+            margin-bottom: var(--spacing-sm);
+            font-weight: 700;
+        }
+        
+        .section-header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 800px;
+        }
+        
+        /* Introducción destacada */
+        .intro-highlight {
+            font-size: 1.4rem;
+            font-weight: 300;
+            line-height: 1.8;
+            color: var(--color-texto);
+            background-color: var(--color-fondo-alt);
+            padding: var(--spacing-lg);
+            border-radius: var(--border-radius-md);
+            margin-bottom: var(--spacing-xl);
+            border-left: 5px solid var(--color-acento-1);
+        }
+        
+        /* Secciones de contenido */
+        .content-section {
+            margin-bottom: var(--spacing-xl);
+        }
+        
+        .content-section h2 {
+            font-size: 1.8rem;
+            color: var(--color-primario);
+            margin-bottom: var(--spacing-md);
+            padding-bottom: var(--spacing-xs);
+            border-bottom: 2px solid var(--color-primario-grad);
+        }
+        
+        .content-section h3 {
+            font-size: 1.4rem;
+            color: var(--color-texto);
+            margin: var(--spacing-md) 0 var(--spacing-sm);
+        }
+        
+        .content-section p {
+            margin-bottom: var(--spacing-md);
+            font-size: 1.05rem;
+        }
+        
+        .content-section ul, .content-section ol {
+            margin-bottom: var(--spacing-md);
+            padding-left: var(--spacing-xl);
+            width: 85%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .content-section li {
+            margin-bottom: var(--spacing-xs);
+        }
+        
+        /* Timeline horizontal */
+        .timeline-container {
+            margin: var(--spacing-xl) 0;
+            position: relative;
+        }
+        
+        .timeline {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 4px;
+            background-color: var(--color-acento-2);
+            top: 50px;
+            left: 0;
+            z-index: 1;
+        }
+        
+        .timeline-item {
+            padding: 0 var(--spacing-md);
+            position: relative;
+            width: 25%;
+            box-sizing: border-box;
+            float: left;
+            margin-bottom: var(--spacing-xl);
+        }
+        
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: var(--color-acento-1);
+            top: 42px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+        }
+        
+        .timeline-content {
+            position: relative;
+            background-color: var(--color-fondo);
+            padding: var(--spacing-md);
+            border-radius: var(--border-radius-md);
+            box-shadow: var(--shadow-md);
+            margin-top: var(--spacing-xl);
+        }
+        
+        .timeline-number {
+            position: absolute;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background-color: var(--color-primario);
+            color: var(--color-blanco);
+            text-align: center;
+            line-height: 36px;
+            top: -18px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-weight: bold;
+        }
+        
+        .timeline-title {
+            margin-top: var(--spacing-md);
+            margin-bottom: var(--spacing-xs);
+            color: var(--color-primario);
+            font-weight: 600;
+            text-align: center;
+        }
+        
+        .timeline-description {
+            font-size: 0.95rem;
+            text-align: center;
+        }
+        
+        .timeline-image {
+            width: 100%;
+            height: 120px;
+            object-fit: cover;
+            border-radius: var(--border-radius-sm);
+            margin-top: var(--spacing-sm);
+        }
+        
+        .timeline::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+        
+        /* Ejercicio de arrastrar y soltar */
+        .drag-drop-container {
+            margin: var(--spacing-xl) 0;
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-md);
+        }
+        
+        .drag-drop-header {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .drag-drop-header h3 {
+            width: 45%;
+            text-align: center;
+            padding: var(--spacing-sm);
+            background-color: var(--color-primario);
+            color: var(--color-blanco);
+            border-radius: var(--border-radius-sm);
+        }
+        
+        .drag-drop-content {
+            display: flex;
+            justify-content: space-between;
+            gap: var(--spacing-md);
+            margin-top: var(--spacing-md);
+        }
+        
+        .drag-items {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--spacing-sm);
+            padding: var(--spacing-md);
+            background-color: var(--color-fondo-alt);
+            border-radius: var(--border-radius-md);
+            margin-top: var(--spacing-md);
+            justify-content: center;
+        }
+        
+        .drag-drop-item {
+            padding: var(--spacing-sm);
+            background-color: var(--color-blanco);
+            border: 2px solid var(--color-acento-2);
+            border-radius: var(--border-radius-sm);
+            cursor: move;
+            transition: all var(--transition-fast);
+            margin: 0 var(--spacing-xs) var(--spacing-sm);
+            width: calc(25% - var(--spacing-md));
+            min-width: 180px;
+            text-align: center;
+        }
+        
+        .drag-drop-item:hover {
+            background-color: #f0f0f0;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .drop-free, .drop-paid {
+            width: 48%;
+            padding: var(--spacing-md);
+            background-color: var(--color-fondo-alt);
+            border: 2px dashed var(--color-acento-2);
+            border-radius: var(--border-radius-md);
+            min-height: 300px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .drop-free h4, .drop-paid h4 {
+            margin-bottom: var(--spacing-md);
+            color: var(--color-acento-2);
+            font-weight: normal;
+            text-align: center;
+        }
+        
+        .drop-target {
+            width: 100%;
+            min-height: 50px;
+            margin-bottom: var(--spacing-sm);
+            background-color: var(--color-blanco);
+            border-radius: var(--border-radius-sm);
+            transition: background-color var(--transition-fast);
+        }
+        
+        .drop-target.drag-over {
+            background-color: rgba(0, 191, 165, 0.1);
+        }
+        
+        .drop-target.correct {
+            border-left: 4px solid #28a745;
+            background-color: rgba(40, 167, 69, 0.1);
+        }
+        
+        .drop-target.incorrect {
+            border-left: 4px solid #dc3545;
+            background-color: rgba(220, 53, 69, 0.1);
+        }
+
+        /* Añadiendo las clases CSS para los elementos */
+        .correct {
+            border: 2px solid #28a745 !important;
+            background-color: rgba(40, 167, 69, 0.1) !important;
+        }
+        
+        .incorrect {
+            border: 2px solid #dc3545 !important;
+            background-color: rgba(220, 53, 69, 0.1) !important;
+        }
+        
+        .drag-drop-buttons {
+            display: flex;
+            justify-content: center;
+            gap: var(--spacing-md);
+            margin-top: var(--spacing-md);
+        }
+        
+        .drag-drop-btn {
+            padding: var(--spacing-sm) var(--spacing-lg);
+            border-radius: var(--border-radius-md);
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color var(--transition-fast);
+            border: none;
+        }
+        
+        .drag-drop-btn.verify {
+            background-color: var(--color-acento-1);
+            color: var(--color-blanco);
+        }
+        
+        .drag-drop-btn.verify:hover {
+            background-color: #00a892;
+        }
+        
+        .drag-drop-btn.reset {
+            background-color: var(--color-acento-2);
+            color: var(--color-blanco);
+        }
+        
+        .drag-drop-btn.reset:hover {
+            background-color: #5a6268;
+        }
+        
+        .drag-drop-feedback {
+            margin-top: var(--spacing-md);
+            padding: var(--spacing-md);
+            border-radius: var(--border-radius-md);
+            text-align: center;
+            font-weight: 600;
+            display: none;
+        }
+        
+        .feedback-success {
+            background-color: rgba(40, 167, 69, 0.1);
+            border-left: 4px solid #28a745;
+            color: #28a745;
+        }
+        
+        .feedback-error {
+            background-color: rgba(220, 53, 69, 0.1);
+            border-left: 4px solid #dc3545;
+            color: #dc3545;
+        }
+        
+        /* Desafío práctico */
+        .challenge-container {
+            background-color: var(--color-fondo-alt);
+            border-radius: var(--border-radius-md);
+            padding: var(--spacing-lg);
+            margin: var(--spacing-xl) 0;
+            box-shadow: var(--shadow-md);
+            border-left: 5px solid var(--color-acento-1);
+        }
+        
+        .challenge-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .challenge-icon {
+            font-size: 1.8rem;
+            color: var(--color-acento-1);
+            margin-right: var(--spacing-sm);
+        }
+        
+        .challenge-title {
+            font-size: 1.5rem;
+            color: var(--color-primario);
+            font-weight: 600;
+        }
+        
+        .challenge-description {
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .step-container {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-md);
+            margin-top: var(--spacing-md);
+        }
+        
+        .step-item {
+            display: flex;
+            background-color: var(--color-blanco);
+            border-radius: var(--border-radius-md);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .step-number {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            background-color: var(--color-acento-1);
+            color: var(--color-blanco);
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        
+        .step-content {
+            padding: var(--spacing-md);
+            flex: 1;
+        }
+        
+        .step-title {
+            font-weight: 600;
+            margin-bottom: var(--spacing-xs);
+            color: var(--color-primario);
+        }
+        
+        .step-description {
+            font-size: 0.95rem;
+        }
+        
+        .challenge-feedback {
+            margin-top: var(--spacing-lg);
+            padding: var(--spacing-md);
+            background-color: rgba(0, 191, 165, 0.1);
+            border-radius: var(--border-radius-md);
+            border-left: 4px solid var(--color-acento-1);
+        }
+        
+        /* Comparativa de planes */
+        .plans-comparison {
+            display: flex;
+            gap: var(--spacing-md);
+            margin: var(--spacing-xl) 0;
+            flex-wrap: wrap;
+        }
+        
+        .plan-card {
+            flex: 1;
+            min-width: 280px;
+            background-color: var(--color-blanco);
+            border-radius: var(--border-radius-md);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: transform var(--transition-fast);
+        }
+        
+        .plan-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .plan-header {
+            padding: var(--spacing-md);
+            text-align: center;
+            background-color: var(--color-fondo-alt);
+            border-bottom: 2px solid #e0e0e0;
+        }
+        
+        .enterprise-plan .plan-header {
+            background-color: var(--color-primario);
+            color: var(--color-blanco);
+        }
+        
+        .plus-plan .plan-header {
+            background-color: var(--color-acento-1);
+            color: var(--color-blanco);
+        }
+        
+        .plan-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: var(--spacing-xs);
+        }
+        
+        .plan-price {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: var(--spacing-xs);
+        }
+        
+        .plan-billing {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        .plan-features {
+            padding: var(--spacing-md);
+        }
+        
+        .plan-feature-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .feature-icon {
+            color: var(--color-acento-1);
+            margin-right: var(--spacing-xs);
+            font-size: 1.1rem;
+        }
+        
+        .enterprise-plan .feature-icon, .plus-plan .feature-icon {
+            color: var(--color-acento-1);
+        }
+        
+        .plan-feature-text {
+            font-size: 0.95rem;
+            flex: 1;
+        }
+        
+        .plan-footer {
+            padding: var(--spacing-md);
+            text-align: center;
+            background-color: var(--color-fondo-alt);
+        }
+        
+        .plan-button {
+            display: inline-block;
+            padding: var(--spacing-sm) var(--spacing-lg);
+            background-color: var(--color-primario);
+            color: var(--color-blanco);
+            border-radius: var(--border-radius-md);
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color var(--transition-fast);
+        }
+        
+        .plan-button:hover {
+            background-color: var(--color-primario-grad);
+        }
+        
+        .enterprise-plan .plan-button, .plus-plan .plan-button {
+            background-color: var(--color-acento-1);
+        }
+        
+        .enterprise-plan .plan-button:hover, .plus-plan .plan-button:hover {
+            background-color: #00a892;
+        }
+        
+        /* Ejemplo contextualizado */
+        .example-container {
+            background-color: var(--color-blanco);
+            border-radius: var(--border-radius-md);
+            padding: var(--spacing-lg);
+            margin: var(--spacing-xl) 0;
+            box-shadow: var(--shadow-md);
+            border-left: 5px solid var(--color-acento-1);
+        }
+        
+        .example-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: var(--spacing-md);
+        }
+        
+        .example-icon {
+            font-size: 1.8rem;
+            color: var(--color-acento-1);
+            margin-right: var(--spacing-sm);
+        }
+        
+        .example-title {
+            font-size: 1.3rem;
+            color: var(--color-primario);
+            font-weight: 600;
+        }
+        
+        .chile-flag {
+            width: 24px;
+            margin-left: var(--spacing-sm);
+            vertical-align: middle;
+        }
+        
+        /* Transición siguiente sección */
+        .next-section-transition {
+            background: linear-gradient(to right, var(--color-fondo-alt), var(--color-blanco));
+            padding: var(--spacing-lg);
+            border-radius: var(--border-radius-md);
+            margin-top: var(--spacing-xl);
+            border-left: 5px solid var(--color-acento-1);
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+        
+        /* Multimedia */
+        .image-container {
+            margin: var(--spacing-lg) 0;
+            text-align: center;
+        }
+        
+        .image-center {
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+        }
+        
+        .content-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: var(--border-radius-md);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .image-caption {
+            margin-top: var(--spacing-sm);
+            color: var(--color-acento-2);
+            text-align: center;
+            padding: 0 var(--spacing-lg);
+        }
+        
+        /* Clearfix para timeline */
+        .clearfix::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+        
+        /* Responsive */
+        @media (max-width: 992px) {
+            .timeline-item {
+                width: 50%;
+            }
+            
+            .timeline::after {
+                top: 60px;
+            }
+            
+            .timeline-item::after {
+                top: 52px;
+            }
+            
+            .plans-comparison {
+                flex-direction: column;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .section-header h1 {
+                font-size: 1.8rem;
+            }
+            
+            .intro-highlight {
+                font-size: 1.2rem;
+            }
+            
+            .content-section h2 {
+                font-size: 1.5rem;
+            }
+            
+            .content-section h3 {
+                font-size: 1.3rem;
+            }
+            
+            .drag-drop-content {
+                flex-direction: column;
+            }
+            
+            .drop-free, .drop-paid {
+                width: 100%;
+                margin-bottom: var(--spacing-md);
+            }
+            
+            .drag-items {
+                width: 100%;
+            }
+            
+            .drag-drop-header h3 {
+                font-size: 1.1rem;
+            }
+            
+            .timeline-item {
+                width: 100%;
+            }
+            
+            .content-section ul, .content-section ol {
+                width: 95%;
+                padding-left: var(--spacing-lg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Encabezado de sección -->
+        <header class="section-header">
+            <h1>Configuración y Acceso a ChatGPT: Primeros Pasos para Profesionales</h1>
+            <p>Aprende a registrarte, acceder y configurar correctamente ChatGPT para optimizar tu experiencia profesional y sacar el máximo provecho de esta herramienta.</p>
+        </header>
+        
+        <!-- Introducción destacada -->
+        <div class="intro-highlight">
+            Comenzar a utilizar ChatGPT puede parecer complicado, pero el proceso es más sencillo de lo que imaginas. En esta sección, te guiaremos paso a paso desde la creación de tu cuenta hasta la configuración óptima para tu contexto profesional en Chile.
+        </div>
+        
+        <!-- Contenido principal -->
+        <section class="content-section">
+            <h2>¿Por Qué Necesitas una Cuenta de ChatGPT?</h2>
+            
+            <p>Antes de sumergirte en el proceso de registro, es importante entender por qué necesitas crear una cuenta en OpenAI para acceder a ChatGPT y cuáles son los beneficios de tener un perfil personalizado:</p>
+            
+            <ul>
+                <li><strong>Historial de conversaciones:</strong> Podrás acceder a tus conversaciones anteriores, lo que te permitirá dar seguimiento a proyectos y retomar consultas previas.</li>
+                <li><strong>Personalización de preferencias:</strong> Configurar el idioma, formato de respuestas y otras opciones según tus necesidades profesionales específicas.</li>
+                <li><strong>Acceso a versiones más avanzadas:</strong> La cuenta te permite potencialmente actualizar a versiones pagas con capacidades extendidas cuando lo necesites.</li>
+                <li><strong>Sincronización entre dispositivos:</strong> Usa ChatGPT desde tu computadora, tablet o smartphone manteniendo tus configuraciones y conversaciones sincronizadas.</li>
+                <li><strong>Seguridad y privacidad:</strong> Una cuenta te permite gestionar tus configuraciones de privacidad y entender mejor cómo se utilizan tus datos.</li>
+            </ul>
+            
+            <p>Para los profesionales en Chile, contar con una cuenta configurada correctamente significa poder adaptar la herramienta a las particularidades del contexto local, como terminología específica, normativas y prácticas empresariales propias del país.</p>
+            
+            <div class="image-container image-center">
+                <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=80" alt="Profesional chileno accediendo a ChatGPT desde diferentes dispositivos" class="content-image" loading="lazy">
+                <div class="image-caption">
+                    <p>Una cuenta de ChatGPT te permite sincronizar tu experiencia en múltiples dispositivos</p>
+                    <span class="image-source">Imagen representativa - Abril 2025</span>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Timeline horizontal del proceso de registro -->
+        <section class="content-section">
+            <h2>Paso a Paso: Creación y Configuración de Tu Cuenta</h2>
+            
+            <p>El proceso para comenzar a utilizar ChatGPT es sencillo y directo. Sigue esta guía paso a paso para crear tu cuenta y realizar la configuración inicial que optimizará tu experiencia:</p>
+            
+            <div class="timeline-container">
+                <div class="timeline clearfix">
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="timeline-number">1</div>
+                            <div class="timeline-title">Visita OpenAI</div>
+                            <div class="timeline-description">Ingresa a chat.openai.com desde tu navegador preferido</div>
+                            <img src="https://images.unsplash.com/photo-1611262588024-d12430b98920?auto=format&fit=crop&w=500&q=80" alt="Sitio web de OpenAI" class="timeline-image">
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="timeline-number">2</div>
+                            <div class="timeline-title">Regístrate</div>
+                            <div class="timeline-description">Haz clic en "Sign Up" y completa el formulario con tus datos</div>
+                            <img src="https://images.unsplash.com/photo-1577375729152-4c8b5fcda381?auto=format&fit=crop&w=500&q=80" alt="Formulario de registro" class="timeline-image">
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="timeline-number">3</div>
+                            <div class="timeline-title">Verifica tu Email</div>
+                            <div class="timeline-description">Confirma tu cuenta a través del enlace enviado a tu correo</div>
+                            <img src="https://images.unsplash.com/photo-1596526131083-e8c633c948d2?auto=format&fit=crop&w=500&q=80" alt="Verificación de email" class="timeline-image">
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="timeline-number">4</div>
+                            <div class="timeline-title">Configura tu Perfil</div>
+                            <div class="timeline-description">Personaliza tus preferencias para optimizar tu experiencia</div>
+                            <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=500&q=80" alt="Configuración de perfil" class="timeline-image">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <p>Una vez completado el registro básico, es recomendable tomar unos minutos adicionales para configurar ciertos aspectos que mejorarán significativamente tu experiencia profesional con ChatGPT:</p>
+            
+            <ol>
+                <li><strong>Configuración de idioma preferido:</strong> Aunque ChatGPT funciona perfectamente en español, puedes alternar entre idiomas según tus necesidades profesionales. Esto es especialmente útil para profesionales chilenos que trabajan con clientes o proveedores internacionales.</li>
+                <li><strong>Ajuste de formato de respuestas:</strong> Dependiendo de tu campo profesional, puedes indicar a ChatGPT que priorice respuestas en formatos específicos (listas, párrafos, esquemas, etc.).</li>
+                <li><strong>Configuración de privacidad:</strong> Revisa y ajusta tus preferencias de privacidad, especialmente si trabajarás con información sensible o confidencial de tu empresa.</li>
+                <li><strong>Familiarízate con los comandos básicos:</strong> Aprende a utilizar comandos como "continúa", "explícame más sobre...", o "reescribe esto de forma más..." que te ayudarán a obtener mejores resultados.</li>
+            </ol>
+            
+            <div class="image-container image-center">
+                <img src="https://images.unsplash.com/photo-1555774698-0b77e0d5fac6?auto=format&fit=crop&w=800&q=80" alt="Proceso de registro en ChatGPT paso a paso" class="content-image" loading="lazy">
+                <div class="image-caption">
+                    <p>Proceso de registro y configuración inicial en ChatGPT</p>
+                    <span class="image-source">Capturas de pantalla actualizadas a abril 2025</span>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Comparativa de planes -->
+        <section class="content-section">
+            <h2>Entendiendo las Diferentes Versiones: Gratuita vs. Paga</h2>
+            
+            <p>Una de las decisiones más importantes que tomarás como profesional es qué versión de ChatGPT utilizar. Cada una tiene características y limitaciones específicas que debes conocer para tomar una decisión informada:</p>
+
+            <p class="plan-disclaimer" style="color: var(--color-acento-2); font-style: italic; margin-bottom: var(--spacing-md); text-align: center;">
+                <strong>Nota:</strong> Los precios mostrados a continuación son solo referenciales y podrían ser modificados por OpenAI en cualquier momento. Se recomienda consultar el sitio oficial para obtener la información más actualizada.
+            </p>
+            
+            <div class="plans-comparison">
+                <div class="plan-card">
+                    <div class="plan-header">
+                        <div class="plan-title">ChatGPT Gratuito</div>
+                        <div class="plan-price">$0</div>
+                        <div class="plan-billing">Sin costo</div>
+                    </div>
+                    <div class="plan-features">
+                        <div class="plan-feature-item">
+                            <span class="feature-icon"><i class="fas fa-check"></i></span>
+                            <div class="plan-feature-text">Acceso al modelo GPT-3.5</div>
+                        </div>
+                        <div class="plan-feature-item">
+                            <span class="feature-icon"><i class="fas fa-check"></i></span>
+                            <div class="plan-feature-text">Conversaciones básicas de texto</div>
+                        </div>
+                        <div class="plan-feature-item">
+                            <span class="feature-icon"><i class="fas fa-check"></i></span>
+                            <div class="plan-feature-text">Disponibilidad limitada en horas pico</div>
+                        </div>
+                        <div class="plan-feature-item">
+                            <span class="feature-icon"><i class="fas fa-check"></i></span>
+                            <div class="plan-feature-text">Límite de mensajes por día</div>
+                        </div>
+                        <div class="plan-feature-item">
+                            <span class="feature-icon"><i class="fas fa-times"></i></span>
+                            <div class="plan-feature-text">Sin acceso a plugins o extensiones</div>
+                        </div>
+                        <div class="plan-feature-item">
+                            <span class="feature-icon"><i class="fas fa-times"></i></span>
+                            <div class="plan-feature-text">Historial de conversaciones limitado</div>
+                        </div>
+                    </div>
+                    <div class="plan-footer">
+                        <span class="plan-button">Comenzar Gratis</span>
+                    </div>
+                </div>
+                
+                <div class="plan-card plus-plan">
+                    <div class="plan-header">
+                        <div class="plan-title">ChatGPT Plus</div>
+                        <div class="plan-price">$20 USD</div>
+                        <div class="plan-billing">Facturación mensual</div>
+                    </div>
+                    <div class="plan-features">
+                        <div class="plan-feature-item">
+                            <span class="feature-icon"><i class="fas fa-check"></i></span>
+                            <div class="plan-feature-text">Acceso a GPT-4, el modelo más avanzado</div>
+                        </div>
+                        <div class="plan-feature-item">
+                            <span class="feature-icon"><i class="fas fa-check"></i></span>
+                            <div class="plan-feature-text">Procesamiento de imágenes y documentos</div>
+                        </div>
+                        <div class="plan-feature-item">
+                            <span class="feature-icon"><i class="fas fa-check"></i></span>
+                            <div class="plan-feature-text">Disponibilidad garantizada 24/7</div>
+                        </div>
+                        <div class="plan-feature-item">
+                            <span class="feature-icon"><i class="fas fa-check"></i></span>
+                            <div class="plan-feature-text">Respuestas más rápidas y precisas</div>
+                        </div>
+                        <div class="plan-feature-item">
+                            <span class="feature-icon"><i class="fas fa-check"></i></span>
+                            <div class="plan-feature-text">Acceso a plugins y navegación web</div>
+                        </div>
+                        <div class="plan-feature-item">
+                            <span class="feature-icon"><i class="fas fa-check"></i></span>
+                            <div class="plan-feature-text">Historial completo de conversaciones</div>
+                        </div>
+                    </div>
+                    <div class="plan-footer">
+                        <span class="plan-button">Suscribirse</span>
+                    </div>
+                </div>
+                
+                <div class="plan-card enterprise-plan">
+                    <div class="plan-header">
+                        <div class="plan-title">ChatGPT Enterprise</div>
+                        <div class="plan-price">Personalizado</div>
+                        <div class="plan-billing">Contactar para precios</div>
+                    </div>
+                    <div class="plan-features">
+                        <div class="plan-feature-item">
+                            <span class="feature-icon"><i class="fas fa-check"></i></span>
+                            <div class="plan-feature-text">Acceso completo a todos los modelos</div>
+                        </div>
+                        <div class="plan-feature-item">
+                            <span class="feature-icon"><i class="fas fa-check"></i></span>
+                            <div class="plan-feature-text">Seguridad y privacidad avanzadas</div>
+                        </div>
+                        <div class="plan-feature-item">
+                            <span class="feature-icon"><i class="fas fa-check"></i></span>
+                            <div class="plan-feature-text">Herramientas de gestión para equipos</div>
+                        </div>
+                        <div class="plan-feature-item">
+                            <span class="feature-icon"><i class="fas fa-check"></i></span>
+                            <div class="plan-feature-text">Integración con sistemas corporativos</div>
+                        </div>
+                        <div class="plan-feature-item">
+                            <span class="feature-icon"><i class="fas fa-check"></i></span>
+                            <div class="plan-feature-text">Personalización según necesidades</div>
+                        </div>
+                        <div class="plan-feature-item">
+                            <span class="feature-icon"><i class="fas fa-check"></i></span>
+                            <div class="plan-feature-text">Soporte técnico dedicado</div>
+                        </div>
+                    </div>
+                    <div class="plan-footer">
+                        <span class="plan-button">Contactar Ventas</span>
+                    </div>
+                </div>
+            </div>
+            
+            <h3>¿Cuál es la Opción Adecuada para Ti?</h3>
+            
+            <p>La elección entre versiones dependerá de varios factores específicos de tu contexto profesional:</p>
+            
+            <ul>
+                <li><strong>Para profesionales independientes o pequeñas empresas:</strong> La versión gratuita puede ser suficiente para tareas ocasionales, pero si dependes diariamente de ChatGPT para tus labores, la suscripción Plus ofrece una relación costo-beneficio excepcional.</li>
+                <li><strong>Para equipos o departamentos:</strong> ChatGPT Plus para miembros clave del equipo puede ser la solución más económica, mientras que empresas con necesidades específicas de seguridad o integración deberían considerar la versión Enterprise.</li>
+                <li><strong>Para uso intensivo:</strong> Si utilizas ChatGPT como herramienta central de tu trabajo diario, procesando documentos o generando contenido extenso, la versión Plus es prácticamente indispensable debido a sus límites más amplios y mejor rendimiento.</li>
+            </ul>
+            
+            <p>Un enfoque común entre profesionales chilenos es comenzar con la versión gratuita para familiarizarse con la herramienta, y luego actualizar a Plus una vez que identifican claramente el valor y retorno de inversión en su contexto específico.</p>
+        </section>
+        
+        <!-- Ejercicio arrastrar y soltar -->
+        <div class="challenge-container">
+            <div class="challenge-header">
+                <div class="challenge-icon">
+                    <i class="fas fa-puzzle-piece"></i>
+                </div>
+                <div class="challenge-title">Ejercicio: Identifica las Características de Cada Versión</div>
+            </div>
+            
+            <div class="challenge-description">
+                <p>Pon a prueba tu comprensión de las diferentes versiones de ChatGPT. Arrastra cada característica hacia la versión correspondiente (gratuita o pagada).</p>
+            </div>
+            
+            <div class="drag-drop-container">
+                <div class="drag-drop-header">
+                    <h3>Versión Gratuita</h3>
+                    <h3>Versión Pagada (Plus/Enterprise)</h3>
+                </div>
+                
+                <div class="drag-items" id="drag-items">
+                    <div class="drag-drop-item" draggable="true" data-type="free">Acceso al modelo GPT-3.5</div>
+                    <div class="drag-drop-item" draggable="true" data-type="paid">Acceso al modelo GPT-4</div>
+                    <div class="drag-drop-item" draggable="true" data-type="paid">Disponibilidad garantizada 24/7</div>
+                    <div class="drag-drop-item" draggable="true" data-type="free">Límites en horas de alta demanda</div>
+                    <div class="drag-drop-item" draggable="true" data-type="paid">Procesamiento de imágenes y documentos</div>
+                    <div class="drag-drop-item" draggable="true" data-type="paid">Acceso a plugins y extensiones</div>
+                    <div class="drag-drop-item" draggable="true" data-type="free">Limitación de mensajes por día</div>
+                    <div class="drag-drop-item" draggable="true" data-type="paid">Historial completo de conversaciones</div>
+                </div>
+                
+                <div class="drag-drop-content">
+                    <div class="drop-free" id="drop-free">
+                        <h4>Arrastra aquí las características de la versión gratuita</h4>
+                    </div>
+                    
+                    <div class="drop-paid" id="drop-paid">
+                        <h4>Arrastra aquí las características de la versión pagada</h4>
+                    </div>
+                </div>
+                
+                <div class="drag-drop-buttons">
+                    <button id="verify-btn" class="drag-drop-btn verify">Verificar Respuestas</button>
+                    <button id="reset-btn" class="drag-drop-btn reset">Reiniciar Ejercicio</button>
+                </div>
+                
+                <div id="feedback-container" class="drag-drop-feedback"></div>
+            </div>
+        </div>
+        
+        <!-- Desafío práctico -->
+        <div class="challenge-container">
+            <div class="challenge-header">
+                <div class="challenge-icon">
+                    <i class="fas fa-laptop-code"></i>
+                </div>
+                <div class="challenge-title">Desafío Práctico: Crear tu Cuenta y Configurar Preferencias</div>
+            </div>
+            
+            <div class="challenge-description">
+                <p>La mejor manera de aprender es haciendo. Vamos a crear tu cuenta de ChatGPT ahora mismo.</p>
+            </div>
+            
+            <div class="step-container">
+                <div class="step-item">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <div class="step-title">Abre el sitio oficial de ChatGPT</div>
+                        <div class="step-description">Visita <strong>chat.openai.com</strong> desde tu navegador preferido y haz clic en "Sign Up" (Registrarse) en la página de inicio.</div>
+                    </div>
+                </div>
+                
+                <div class="step-item">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <div class="step-title">Completa el formulario de registro</div>
+                        <div class="step-description">Ingresa tu dirección de correo electrónico, crea una contraseña segura y completa la información personal básica solicitada. Asegúrate de utilizar una dirección de correo que revises regularmente.</div>
+                    </div>
+                </div>
+                
+                <div class="step-item">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <div class="step-title">Verifica tu cuenta</div>
+                        <div class="step-description">Revisa tu bandeja de entrada y haz clic en el enlace de verificación enviado por OpenAI. Si no lo encuentras, revisa tu carpeta de spam o solicita un nuevo correo de verificación.</div>
+                    </div>
+                </div>
+                
+                <div class="step-item">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <div class="step-title">Configura tus preferencias básicas</div>
+                        <div class="step-description">Una vez dentro de tu cuenta, ve a "Configuración" y personaliza opciones como el idioma preferido, tema (claro/oscuro) y notificaciones según tus necesidades profesionales.</div>
+                    </div>
+                </div>
+                
+                <div class="step-item">
+                    <div class="step-number">5</div>
+                    <div class="step-content">
+                        <div class="step-title">Captura tu panel de inicio</div>
+                        <div class="step-description">Toma una captura de pantalla de tu panel de inicio (asegúrate de no incluir información sensible) para verificar la completitud del ejercicio.</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="challenge-feedback">
+                <p><strong>¡Perfecto!</strong> Has completado el primer paso para incorporar ChatGPT en tu trabajo diario. Asegúrate de guardar tus credenciales en un lugar seguro.</p>
+            </div>
+        </section>
+        
+        <!-- Seguridad y mejores prácticas -->
+        <section class="content-section">
+            <h2>Seguridad y Mejores Prácticas de Acceso</h2>
+            
+            <p>En un entorno profesional, especialmente al trabajar con información sensible, es fundamental implementar buenas prácticas de seguridad al utilizar ChatGPT:</p>
+            
+            <ul>
+                <li><strong>Utiliza contraseñas robustas:</strong> Crea una contraseña exclusiva para tu cuenta de OpenAI que incluya letras (mayúsculas y minúsculas), números y símbolos.</li>
+                <li><strong>Activa la autenticación de dos factores (2FA):</strong> Esta capa adicional de seguridad es esencial para proteger tu cuenta, especialmente si manejas información sensible o pagas por una suscripción.</li>
+                <li><strong>No compartas credenciales:</strong> Aunque pueda parecer práctico compartir una cuenta entre colegas, esto compromete la seguridad y dificulta el seguimiento de conversaciones personalizadas.</li>
+                <li><strong>Cierra sesión en dispositivos compartidos:</strong> Si utilizas ChatGPT en un equipo compartido, siempre asegúrate de cerrar sesión al terminar.</li>
+                <li><strong>Revisa periódicamente el historial de acceso:</strong> Verifica regularmente si hay inicios de sesión sospechosos o desde ubicaciones desconocidas.</li>
+            </ul>
+            
+            <h3>Consideraciones de Privacidad para Profesionales Chilenos</h3>
+            
+            <p>Al utilizar ChatGPT en un contexto empresarial en Chile, es importante considerar aspectos específicos de privacidad y cumplimiento normativo:</p>
+            
+            <ul>
+                <li><strong>Ley de Protección de Datos (19.628):</strong> Recuerda que la información compartida con ChatGPT puede ser utilizada para el entrenamiento de futuros modelos, por lo que debes evitar compartir datos personales sensibles de clientes o empleados.</li>
+                <li><strong>Información confidencial de la empresa:</strong> No compartas información estratégica, financiera o propietaria de tu organización que podría comprometer ventajas competitivas.</li>
+                <li><strong>Datos de sectores regulados:</strong> Si trabajas en sectores como salud, finanzas o educación, existen regulaciones específicas sobre el manejo de datos que debes considerar antes de utilizar herramientas externas como ChatGPT.</li>
+            </ul>
+            
+            <div class="image-container image-center">
+                <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=800&q=80" alt="Seguridad y privacidad en el uso profesional de ChatGPT" class="content-image" loading="lazy">
+                <div class="image-caption">
+                    <p>La seguridad y privacidad son aspectos fundamentales para el uso profesional de ChatGPT</p>
+                    <span class="image-source">Recomendaciones para profesionales - 2025</span>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Ejemplo contextualizado Chile -->
+        <div class="example-container">
+            <div class="example-header">
+                <div class="example-icon">
+                    <i class="fas fa-flag"></i>
+                </div>
+                <div class="example-title">
+                    Reflexiones: Adopción de IA Generativa en Entornos Profesionales
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Flag_of_Chile.svg/1200px-Flag_of_Chile.svg.png" alt="Bandera de Chile" class="chile-flag">
+                </div>
+            </div>
+            
+            <p>La adopción de herramientas de IA generativa como ChatGPT en entornos laborales representa un cambio paradigmático en la forma de trabajar. Observamos que las organizaciones que implementan estas tecnologías suelen atravesar tres fases diferenciadas: experimentación inicial (donde pequeños grupos exploran posibilidades), adopción estructurada (donde se desarrollan guías y mejores prácticas), y finalmente integración sistémica (donde la IA se convierte en parte del flujo de trabajo cotidiano).</p>
+            <br>
+            <p>En el contexto chileno, las empresas enfrentan desafíos particulares como la adaptación de estas herramientas a las normativas locales, especialmente en sectores regulados como banca, salud y educación. La preocupación por la privacidad de datos y la seguridad de la información confidencial constituye otro factor crítico que debe abordarse mediante políticas claras y capacitación adecuada. A pesar de estos retos, el potencial para democratizar el acceso a herramientas de productividad avanzada representa una oportunidad especialmente valiosa para pequeñas y medianas empresas.</p>
+            <br>
+            <p>Las tareas administrativas que están siendo más impactadas por ChatGPT incluyen: redacción y revisión de comunicaciones, generación de resúmenes de datos y reuniones, creación de presentaciones, análisis preliminar de información, y atención a consultas frecuentes. Los profesionales que logran integrar estas herramientas de manera efectiva no solo automatizan tareas repetitivas sino que potencian su capacidad analítica, permitiéndoles enfocarse en actividades de mayor valor agregado y toma de decisiones estratégicas.</p>
+        </div>
+        
+        <!-- Transición a la siguiente sección -->
+        <div class="next-section-transition">
+            <p>Con tu cuenta ya configurada, es momento de aprender las técnicas fundamentales para comunicarte efectivamente con ChatGPT y obtener resultados óptimos para tus tareas administrativas.</p>
+        </div>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Función para el ejercicio de arrastrar y soltar
+            const items = document.querySelectorAll('.drag-drop-item');
+            const dropFree = document.getElementById('drop-free');
+            const dropPaid = document.getElementById('drop-paid');
+            const verifyBtn = document.getElementById('verify-btn');
+            const resetBtn = document.getElementById('reset-btn');
+            const feedbackContainer = document.getElementById('feedback-container');
+            
+            // Agregar eventos a elementos arrastrables
+            items.forEach(item => {
+                item.addEventListener('dragstart', dragStart);
+                item.addEventListener('dragend', dragEnd);
+            });
+            
+            // Configurar zonas de destino
+            [dropFree, dropPaid].forEach(zone => {
+                zone.addEventListener('dragover', dragOver);
+                zone.addEventListener('dragenter', dragEnter);
+                zone.addEventListener('dragleave', dragLeave);
+                zone.addEventListener('drop', drop);
+            });
+            
+            // Configurar botones
+            verifyBtn.addEventListener('click', verifyAnswers);
+            resetBtn.addEventListener('click', resetExercise);
+            
+            // Funciones para manejar eventos de arrastrar
+            function dragStart(e) {
+                e.dataTransfer.setData('text/plain', e.target.dataset.type + '|' + e.target.innerText);
+                setTimeout(() => {
+                    e.target.classList.add('dragging');
+                }, 0);
+            }
+            
+            function dragEnd(e) {
+                e.target.classList.remove('dragging');
+            }
+            
+            function dragOver(e) {
+                e.preventDefault();
+            }
+            
+            function dragEnter(e) {
+                e.preventDefault();
+                this.classList.add('drag-over');
+            }
+            
+            function dragLeave() {
+                this.classList.remove('drag-over');
+            }
+            
+            function drop(e) {
+                e.preventDefault();
+                this.classList.remove('drag-over');
+                
+                // Eliminar mensaje de instrucción si es el primer elemento
+                if (this.querySelector('h4')) {
+                    this.innerHTML = '';
+                }
+                
+                const data = e.dataTransfer.getData('text/plain').split('|');
+                const type = data[0];
+                const text = data[1];
+                
+                // Crear nuevo elemento para la zona de destino
+                const itemElement = document.createElement('div');
+                itemElement.classList.add('drag-drop-item');
+                itemElement.dataset.type = type;
+                itemElement.textContent = text;
+                
+                // Añadir elemento a la zona de destino
+                this.appendChild(itemElement);
+                
+                // Eliminar el elemento original
+                const originalItem = document.querySelector(`.drag-drop-item.dragging`);
+                if (originalItem) {
+                    originalItem.remove();
+                }
+            }
+            
+            // Función para verificar todas las respuestas
+            function verifyAnswers() {
+                let totalCorrect = 0;
+                let totalItems = 0;
+                
+                // Verificar elementos en zona "free"
+                const freeItems = dropFree.querySelectorAll('.drag-drop-item');
+                freeItems.forEach(item => {
+                    totalItems++;
+                    if (item.dataset.type === 'free') {
+                        item.classList.add('correct');
+                        item.classList.remove('incorrect');
+                        totalCorrect++;
+                    } else {
+                        item.classList.add('incorrect');
+                        item.classList.remove('correct');
+                    }
+                });
+                
+                // Verificar elementos en zona "paid"
+                const paidItems = dropPaid.querySelectorAll('.drag-drop-item');
+                paidItems.forEach(item => {
+                    totalItems++;
+                    if (item.dataset.type === 'paid') {
+                        item.classList.add('correct');
+                        item.classList.remove('incorrect');
+                        totalCorrect++;
+                    } else {
+                        item.classList.add('incorrect');
+                        item.classList.remove('correct');
+                    }
+                });
+                
+                // Mostrar retroalimentación
+                feedbackContainer.style.display = 'block';
+                if (totalItems === 0) {
+                    feedbackContainer.textContent = "Por favor, arrastra las características a las categorías correspondientes.";
+                    feedbackContainer.className = 'drag-drop-feedback feedback-error';
+                } else if (totalCorrect === totalItems) {
+                    feedbackContainer.textContent = `¡Excelente! Has clasificado correctamente todas las características (${totalCorrect}/${totalItems}).`;
+                    feedbackContainer.className = 'drag-drop-feedback feedback-success';
+                } else {
+                    feedbackContainer.textContent = `Has clasificado correctamente ${totalCorrect} de ${totalItems} características. Revisa las marcadas en rojo e intenta de nuevo.`;
+                    feedbackContainer.className = 'drag-drop-feedback feedback-error';
+                }
+            }
+            
+            // Función para reiniciar el ejercicio
+            function resetExercise() {
+                // Limpiar áreas de destino
+                dropFree.innerHTML = '<h4>Arrastra aquí las características de la versión gratuita</h4>';
+                dropPaid.innerHTML = '<h4>Arrastra aquí las características de la versión pagada</h4>';
+                
+                // Regenerar elementos originales
+                const dragItems = document.getElementById('drag-items');
+                dragItems.innerHTML = '';
+                
+                const characteristics = [
+                    { type: 'free', text: 'Acceso al modelo GPT-3.5' },
+                    { type: 'paid', text: 'Acceso al modelo GPT-4' },
+                    { type: 'paid', text: 'Disponibilidad garantizada 24/7' },
+                    { type: 'free', text: 'Límites en horas de alta demanda' },
+                    { type: 'paid', text: 'Procesamiento de imágenes y documentos' },
+                    { type: 'paid', text: 'Acceso a plugins y extensiones' },
+                    { type: 'free', text: 'Limitación de mensajes por día' },
+                    { type: 'paid', text: 'Historial completo de conversaciones' }
+                ];
+                
+                characteristics.forEach(char => {
+                    const itemElement = document.createElement('div');
+                    itemElement.classList.add('drag-drop-item');
+                    itemElement.setAttribute('draggable', 'true');
+                    itemElement.dataset.type = char.type;
+                    itemElement.textContent = char.text;
+                    itemElement.addEventListener('dragstart', dragStart);
+                    itemElement.addEventListener('dragend', dragEnd);
+                    dragItems.appendChild(itemElement);
+                });
+                
+                // Ocultar retroalimentación
+                feedbackContainer.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>

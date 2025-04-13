@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía de Interfaz de ChatGPT</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+        }
+        
+        .header {
+            text-align: center;
+            padding: 15px;
+            background-color: #0A84FF;
+            color: white;
+            margin-bottom: 20px;
+        }
+        
+        .header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+        
+        .header p {
+            margin: 10px 0 0 0;
+            font-size: 16px;
+        }
+        
+        .container {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px 30px;
+        }
+        
+        .image-container {
+            position: relative;
+            width: 100%;
+            margin: 0 auto;
+            overflow: visible;
+        }
+        
+        .bg-image {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .indicator {
+            position: absolute;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background-color: #0A84FF;
+            color: white;
+            font-weight: bold;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+            border: 2px solid white;
+            transition: transform 0.2s ease;
+            z-index: 10;
+            font-size: 14px;
+        }
+        
+        .indicator:hover {
+            transform: scale(1.1);
+            z-index: 20;
+        }
+        
+        .tooltip {
+            position: absolute;
+            background-color: white;
+            color: #333;
+            padding: 12px 15px;
+            border-radius: 6px;
+            font-size: 14px;
+            width: 220px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s;
+            z-index: 30;
+            border: 1px solid #ddd;
+            pointer-events: none;
+        }
+        
+        .indicator:hover .tooltip {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .tooltip h3 {
+            margin: 0 0 8px 0;
+            color: #0A84FF;
+            font-size: 16px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 5px;
+        }
+        
+        .tooltip p {
+            margin: 0;
+            line-height: 1.4;
+        }
+        
+        .tooltip.left {
+            right: 105%;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        
+        .tooltip.right {
+            left: 105%;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        
+        .tooltip.top {
+            bottom: 105%;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .tooltip.bottom {
+            top: 105%;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        /* Posiciones personalizadas definidas por el usuario */
+        #indicator1 { left: 7.00%; top: 29.10%; }
+        #indicator2 { left: 29.33%; top: 5.18%; }
+        #indicator3 { left: 84.83%; top: 7.16%; }
+        #indicator4 { left: 50.17%; top: 42.51%; }
+        #indicator5 { left: 41.83%; top: 53.33%; }
+        #indicator6 { left: 49.67%; top: 54.40%; }
+        #indicator7 { left: 76.08%; top: 49.07%; }
+        #indicator8 { left: 83.75%; top: 49.83%; }
+        #indicator9 { left: 56.00%; top: 52.11%; }
+        #indicator10 { left: 95.42%; top: 9.75%; }
+        #indicator11 { left: 73.83%; top: 32.46%; }
+        
+        @media (max-width: 768px) {
+            .tooltip {
+                width: 180px;
+                font-size: 12px;
+            }
+            
+            .tooltip h3 {
+                font-size: 14px;
+            }
+            
+            .indicator {
+                width: 28px;
+                height: 28px;
+                font-size: 12px;
+            }
+            
+            .header h1 {
+                font-size: 20px;
+            }
+            
+            .header p {
+                font-size: 14px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .tooltip.left, .tooltip.right {
+                left: 50%;
+                top: auto;
+                right: auto;
+                bottom: 105%;
+                transform: translateX(-50%);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Guía de Interfaz de ChatGPT</h1>
+        <p>Pasa el cursor sobre los botones numerados para ver descripciones detalladas de cada función</p>
+    </div>
+    
+    <div class="container">
+        <div class="image-container">
+            <!-- Imagen desde tu repositorio GitHub -->
+            <img src="a.png" alt="Interfaz de ChatGPT" class="bg-image">
+            
+            <!-- Sidebar Menu -->
+            <div id="indicator1" class="indicator">
+                1
+                <div class="tooltip right">
+                    <h3>Menú Lateral</h3>
+                    <p>Accede a tus conversaciones guardadas y diferentes asistentes. Aquí también puedes crear nuevos chats o explorar GPT.</p>
+                </div>
+            </div>
+            
+            <!-- ChatGPT Dropdown -->
+            <div id="indicator2" class="indicator">
+                2
+                <div class="tooltip bottom">
+                    <h3>Selector de Modelo</h3>
+                    <p>Cambia entre diferentes versiones de ChatGPT (3.5, 4, etc.) y modelos especializados.</p>
+                </div>
+            </div>
+            
+            <!-- Temporal Button -->
+            <div id="indicator3" class="indicator">
+                3
+                <div class="tooltip bottom">
+                    <h3>Modo Temporal</h3>
+                    <p>Activa el modo temporal que permite a ChatGPT recordar el contexto de la conversación actual.</p>
+                </div>
+            </div>
+            
+            <!-- Input Field -->
+            <div id="indicator4" class="indicator">
+                4
+                <div class="tooltip top">
+                    <h3>Campo de Texto</h3>
+                    <p>Escribe tus preguntas o instrucciones para ChatGPT aquí. Puedes solicitar información, pedir asistencia con tareas o generar contenido.</p>
+                </div>
+            </div>
+            
+            <!-- Search Button -->
+            <div id="indicator5" class="indicator">
+                5
+                <div class="tooltip top">
+                    <h3>Botón de Búsqueda</h3>
+                    <p>Activa la capacidad de búsqueda web de ChatGPT para obtener información actualizada de internet.</p>
+                </div>
+            </div>
+            
+            <!-- Reason Button -->
+            <div id="indicator6" class="indicator">
+                6
+                <div class="tooltip top">
+                    <h3>Botón Razona</h3>
+                    <p>Activa el modo de razonamiento avanzado que permite a ChatGPT desglosar problemas complejos paso a paso.</p>
+                </div>
+            </div>
+            
+            <!-- Microphone Button -->
+            <div id="indicator7" class="indicator">
+                7
+                <div class="tooltip left">
+                    <h3>Micrófono</h3>
+                    <p>Activa la entrada por voz para hablar con ChatGPT en lugar de escribir.</p>
+                </div>
+            </div>
+            
+            <!-- Send Button -->
+            <div id="indicator8" class="indicator">
+                8
+                <div class="tooltip left">
+                    <h3>Enviar Mensaje</h3>
+                    <p>Envía tu mensaje a ChatGPT para recibir una respuesta.</p>
+                </div>
+            </div>
+            
+            <!-- Options Button -->
+            <div id="indicator9" class="indicator">
+                9
+                <div class="tooltip top">
+                    <h3>Opciones Adicionales</h3>
+                    <p>Accede a funciones adicionales y opciones de configuración para tu consulta.</p>
+                </div>
+            </div>
+            
+            <!-- Profile Button -->
+            <div id="indicator10" class="indicator">
+                10
+                <div class="tooltip left">
+                    <h3>Perfil de Usuario</h3>
+                    <p>Accede a la configuración de tu cuenta, suscripciones y ajustes de preferencias.</p>
+                </div>
+            </div>
+            
+            <!-- Main Header -->
+            <div id="indicator11" class="indicator">
+                11
+                <div class="tooltip bottom">
+                    <h3>Mensaje de Bienvenida</h3>
+                    <p>Pantalla inicial donde ChatGPT te invita a hacer preguntas o solicitar ayuda.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

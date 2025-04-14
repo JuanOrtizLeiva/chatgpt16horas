@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Módulo de Inducción para el curso de Chatgpt: Impulsa La Productividad Administrativa Y Analítica">
+    <title>Módulo Inducción - ChatGPT Productivo</title>
+    <!-- Fuentes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+    <!-- Framework CSS y librerías -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <!-- Estilos principales -->
+    <style>
+        /**
+         * Variables y configuración base
+         * ---------------------------
+         * Sistema de tokens para facilitar cambios futuros
+         */
+        :root {
+            /* Paleta de colores principal */
+            --brand-primary: #0054a6;
+            --brand-primary-light: #2477c5; 
+            --brand-primary-dark: #003d7a;
+            --brand-secondary: #e63946;
+            --brand-secondary-light: #f27781;
+            --brand-accent: #17a2b8;
+            
+            /* Neutros */
+            --neutral-100: #ffffff;
+            --neutral-200: #f8f9fa;
+            --neutral-300: #e9ecef;
+            --neutral-400: #dee2e6;
+            --neutral-500: #adb5bd;
+            --neutral-600: #6c757d;
+            --neutral-700: #495057;
+            --neutral-800: #343a40;
+            --neutral-900: #212529;
+            
+            /* Feedback colors */
+            --success: #198754;
+            --info: #17a2b8;
+            --warning: #ffc107;
+            --danger: #dc3545;
+            
+            /* Espaciados */
+            --space-unit: 0.25rem;
+            --space-xs: calc(var(--space-unit) * 2);
+            --space-sm: calc(var(--space-unit) * 4);
+            --space-md: calc(var(--space-unit) * 8);
+            --space-lg: calc(var(--space-unit) * 12);
+            --space-xl: calc(var(--space-unit) * 16);
+            
+            /* Tipografía */
+            --font-primary: 'Nunito', system-ui, -apple-system, sans-serif;
+            --font-secondary: 'Playfair Display', Georgia, serif;
+            --font-size-xs: 0.75rem;
+            --font-size-sm: 0.875rem;
+            --font-size-md: 1rem;
+            --font-size-lg: 1.25rem;
+            --font-size-xl: 1.5rem;
+            --font-size-2xl: 2rem;
+            --font-size-3xl: 2.5rem;
+            --font-size-4xl: 3rem;
+            
+            /* Bordes y sombras */
+            --border-radius-sm: 0.25rem;
+            --border-radius-md: 0.5rem;
+            --border-radius-lg: 1rem;
+            --border-radius-xl: 1.5rem;
+            --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.1);
+            --shadow-xl: 0 12px 24px rgba(0, 0, 0, 0.15);
+            
+            /* Transiciones */
+            --transition-fast: 0.15s ease;
+            --transition-normal: 0.3s ease;
+            --transition-slow: 0.5s ease;
+            
+            /* Z-index layers */
+            --z-below: -1;
+            --z-normal: 1;
+            --z-above: 10;
+            --z-fixed: 100;
+            --z-modal: 1000;
+        }
+        
+        /**
+         * Reset y estilos base
+         * --------------------------- 
+         */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        html {
+            font-size: 16px;
+            scroll-behavior: smooth;
+            height: 100%;
+        }
+        
+        body {
+            font-family: var(--font-primary);
+            color: var(--neutral-800);
+            line-height: 1.6;
+            background-color: var(--neutral-200);
+            overflow-x: hidden;
+            position: relative;
+            min-height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        /**
+         * Utilidades 
+         * ---------------------------
+         */
+        .bg-brand-primary {
+            background-color: var(--brand-primary);
+        }
+        
+        .bg-brand-secondary {
+            background-color: var(--brand-secondary);
+        }
+        
+        .bg-brand-accent {
+            background-color: var(--brand-accent);
+        }
+        
+        .text-brand-primary {
+            color: var(--brand-primary);
+        }
+        
+        .text-brand-secondary {
+            color: var(--brand-secondary);
+        }
+        
+        .text-brand-accent {
+            color: var(--brand-accent);
+        }
+        
+        .fw-medium {
+            font-weight: 500;
+        }
+        
+        .shadow-hover {
+            transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+        }
+        
+        .shadow-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .text-gradient {
+            background: linear-gradient(135deg, var(--brand-primary), var(--brand-accent));
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            color: var(--brand-primary);
+        }
+        
+        .bg-gradient-primary {
+            background: linear-gradient(135deg, var(--brand-primary), var(--brand-primary-light));
+        }
+        
+        .bg-gradient-secondary {
+            background: linear-gradient(135deg, var(--brand-secondary), var(--brand-secondary-light));
+        }
+        
+        /**
+         * Layout y componentes principales
+         * ---------------------------
+         */
+        .hero-section {
+            background: var(--brand-primary);
+            background: linear-gradient(135deg, var(--brand-primary-dark), var(--brand-primary), var(--brand-primary-light));
+            color: white;
+            padding: var(--space-xl) 0;
+            border-radius: 0 0 var(--border-radius-xl) var(--border-radius-xl);
+            position: relative;
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            margin-bottom: var(--space-xl);
+        }
+        
+        .hero-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.5;
+            z-index: 0;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero-title {
+            font-family: var(--font-secondary);
+            font-weight: 800;
+            font-size: var(--font-size-4xl);
+            margin-bottom: var(--space-md);
+            line-height: 1.2;
+        }
+        
+        .hero-subtitle {
+            font-size: var(--font-size-xl);
+            margin-bottom: var(--space-lg);
+            opacity: 0.9;
+            font-weight: 300;
+            max-width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .institution-badge {
+            display: inline-block;
+            padding: var(--space-xs) var(--space-sm);
+            background-color: rgba(255, 255, 255, 0.15);
+            border-radius: var(--border-radius-md);
+            backdrop-filter: blur(5px);
+            font-weight: 600;
+            letter-spacing: 1px;
+            font-size: var(--font-size-sm);
+            margin-top: var(--space-md);
+        }
+        
+        /* Secciones */
+        .section {
+            padding: var(--space-lg) 0;
+            margin-bottom: var(--space-lg);
+        }
+        
+        .section-title {
+            font-family: var(--font-secondary);
+            color: var(--brand-primary);
+            margin-bottom: var(--space-md);
+            position: relative;
+            padding-bottom: var(--space-xs);
+            display: inline-block;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 60%;
+            height: 3px;
+            background-color: var(--brand-secondary);
+        }
+        
+        /* Tarjetas y módulos */
+        .module-card {
+            border: none;
+            border-radius: var(--border-radius-lg);
+            overflow: hidden;
+            transition: all var(--transition-normal);
+            box-shadow: var(--shadow-md);
+            height: 100%;
+        }
+        
+        .module-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .module-card .card-header {
+            background-color: var(--brand-primary);
+            color: white;
+            border-bottom: none;
+            padding: var(--space-md);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .module-card .card-header::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+        }
+        
+        .module-card .card-body {
+            padding: var(--space-md);
+            background-color: white;
+        }
+        
+        /* Metodología y secciones adicionales */
+        .methodology-card {
+            height: 100%;
+            border: none;
+            border-radius: var(--border-radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: all var(--transition-normal);
+        }
+        
+        .methodology-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .methodology-card .card-header {
+            border-bottom: none;
+            padding: var(--space-md);
+            background-color: var(--brand-primary);
+            color: white;
+        }
+        
+        .methodology-card .card-body {
+            padding: var(--space-md);
+        }
+        
+        .video-container {
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            padding-top: 56.25%; /* 16:9 Aspect Ratio */
+            margin-bottom: var(--space-md);
+            border-radius: var(--border-radius-md);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        .info-circle {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto var(--space-md);
+            transition: all var(--transition-normal);
+            box-shadow: var(--shadow-md);
+            cursor: pointer;
+        }
+        
+        .info-circle:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .red-circle {
+            background-color: var(--brand-secondary);
+        }
+        
+        .blue-circle {
+            background-color: var(--brand-primary-light);
+        }
+        
+        .info-circle i {
+            font-size: 50px;
+            color: white;
+        }
+        
+        .info-text {
+            text-align: center;
+            font-weight: 600;
+            margin-top: var(--space-xs);
+            color: var(--neutral-700);
+        }
+        
+        .slogan {
+            font-family: var(--font-secondary);
+            color: var(--brand-secondary);
+            font-weight: 700;
+            font-size: var(--font-size-2xl);
+            text-align: center;
+            margin: var(--space-xl) 0 var(--space-md);
+        }
+        
+        /* Footer */
+        .site-footer {
+            background-color: var(--neutral-800);
+            color: white;
+            padding: var(--space-lg) 0;
+            margin-top: auto;
+        }
+        
+        .site-footer h5 {
+            color: var(--neutral-300);
+            margin-bottom: var(--space-md);
+        }
+        
+        .site-footer a {
+            color: var(--neutral-400);
+            text-decoration: none;
+            transition: color var(--transition-normal);
+        }
+        
+        .site-footer a:hover {
+            color: white;
+        }
+        
+        .footer-divider {
+            border-color: rgba(255, 255, 255, 0.1);
+            margin: var(--space-md) 0;
+        }
+        
+        /* Media queries para responsive */
+        @media (max-width: 991.98px) {
+            .hero-title {
+                font-size: var(--font-size-3xl);
+            }
+            
+            .hero-subtitle {
+                font-size: var(--font-size-lg);
+                max-width: 100%;
+            }
+        }
+        
+        @media (max-width: 767.98px) {
+            .hero-title {
+                font-size: var(--font-size-2xl);
+            }
+            
+            .hero-subtitle {
+                font-size: var(--font-size-md);
+            }
+            
+            .section {
+                padding: var(--space-md) 0;
+            }
+            
+            .info-circle {
+                width: 90px;
+                height: 90px;
+            }
+            
+            .info-circle i {
+                font-size: 36px;
+            }
+        }
+        
+        /* Animaciones personalizadas */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity var(--transition-normal), transform var(--transition-normal);
+        }
+        
+        .fade-up.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .stagger-delay-1 {
+            transition-delay: 0.1s;
+        }
+        
+        .stagger-delay-2 {
+            transition-delay: 0.2s;
+        }
+        
+        .stagger-delay-3 {
+            transition-delay: 0.3s;
+        }
+        
+        .stagger-delay-4 {
+            transition-delay: 0.4s;
+        }
+
+        /* Tooltip personalizado */
+        .tooltip-inner {
+            max-width: 300px;
+            padding: 10px 15px;
+            color: white;
+            text-align: center;
+            background-color: var(--brand-primary-dark);
+            border-radius: var(--border-radius-md);
+            font-family: var(--font-primary);
+            font-size: var(--font-size-sm);
+            box-shadow: var(--shadow-md);
+        }
+    </style>
+</head>
+<body>
+    <!-- Encabezado/Banner principal -->
+    <header class="hero-section">
+        <div class="hero-pattern"></div>
+        <div class="container hero-content text-center">
+            <h1 class="hero-title animate__animated animate__fadeInDown">Módulo Inducción</h1>
+            <p class="hero-subtitle animate__animated animate__fadeInUp animate__delay-1s">Chatgpt: Impulsa La Productividad Administrativa Y Analítica</p>
+            <div class="institution-badge animate__animated animate__fadeIn animate__delay-2s">Instituto de capacitación Tecnipro</div>
+        </div>
+    </header>
+    
+    <main class="container">
+        <!-- Sección de Video Navegación -->
+        <section class="section">
+            <h2 class="section-title">Video Navegación</h2>
+            
+            <div class="row g-4">
+                <div class="col-lg-7">
+                    <div class="module-card fade-up">
+                        <div class="card-body">
+                            <div class="video-container">
+                                <iframe src="https://player.vimeo.com/video/1075177509?h=d880642286&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" width="1920" height="1080" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" title="Video Introducción"></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-5">
+                    <div class="module-card fade-up stagger-delay-1">
+                        <div class="card-header">
+                            <h3 class="h5 mb-0"><i class="fas fa-info-circle me-2"></i> Detalles del Video</h3>
+                        </div>
+                        <div class="card-body">
+                            <p class="lead">En este video podrá visualizar la forma de navegar por la plataforma, los videos, archivos y actividades pueden ser vistas en modo pantalla completa.</p>
+                            
+                            <div class="alert alert-primary mt-4">
+                                <div class="d-flex">
+                                    <div class="me-3">
+                                        <i class="fas fa-lightbulb fa-2x text-primary"></i>
+                                    </div>
+                                    <div>
+                                        <h5 class="alert-heading">Recomendación</h5>
+                                        <p class="mb-0">Revise todas las funcionalidades de navegación para aprovechar al máximo los recursos disponibles en la plataforma.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Sección de Información General -->
+        <section class="section">
+            <h2 class="section-title">Información General</h2>
+            
+            <div class="methodology-card fade-up">
+                <div class="card-header bg-gradient-primary">
+                    <h3 class="h5 mb-0 text-center">Accesos Rápidos e Información del Curso</h3>
+                </div>
+                <div class="card-body bg-white">
+                    <div class="row g-4 text-center">
+                        <div class="col-md-3 fade-up">
+                            <div class="info-circle red-circle" data-bs-toggle="tooltip" data-bs-placement="top" title="¡Bienvenido/a al curso ChatGPT Productivo! Estamos encantados de tenerte con nosotros. Aquí aprenderás a implementar herramientas para optimizar procesos empresariales. ¡Comencemos este viaje juntos!">
+                                <i class="fas fa-paper-plane"></i>
+                            </div>
+                            <h5 class="info-text">Bienvenida</h5>
+                        </div>
+                        
+                        <div class="col-md-3 fade-up stagger-delay-1">
+                            <div class="info-circle blue-circle" data-bs-toggle="tooltip" data-bs-placement="top" title="El curso está compuesto por 2 módulos: Fundamentos de ChatGPT, Aplicaciones Analíticas">
+                                <i class="fas fa-calculator"></i>
+                            </div>
+                            <h5 class="info-text">Cantidad de<br>Módulos</h5>
+                        </div>
+                        
+                        <div class="col-md-3 fade-up stagger-delay-2">
+                            <div class="info-circle blue-circle" data-bs-toggle="tooltip" data-bs-placement="top" title="La duración total del curso es de 16 horas, distribuidas en 2 módulos. Cada módulo está diseñado para proporcionar conocimientos teóricos y habilidades prácticas aplicables de inmediato en tu entorno laboral.">
+                                <i class="fas fa-hourglass-half"></i>
+                            </div>
+                            <h5 class="info-text">Duración<br>del Curso</h5>
+                        </div>
+                        
+                        <div class="col-md-3 fade-up stagger-delay-3">
+                            <div class="info-circle blue-circle" data-bs-toggle="tooltip" data-bs-placement="top" title="Para cualquier consulta sobre el curso, puedes contactarnos por email a info@duocapital.cl o llamar al teléfono +56966895746. Nuestro equipo está disponible para apoyarte en tu proceso de aprendizaje.">
+                                <i class="fas fa-book-open"></i>
+                            </div>
+                            <h5 class="info-text">Datos de<br>Contacto</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Lema -->
+        <section class="section text-center">
+            <h2 class="slogan fade-up">Líderes en la Capacitación Empresarial</h2>
+        </section>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="site-footer mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <h5>Instituto de capacitación Tecnipro</h5>
+                    <p>Especialistas en formación profesional en tecnologías emergentes e innovación empresarial.</p>
+                    <p class="mb-0">
+                        <i class="fas fa-envelope me-2"></i> info@duocapital.cl<br>
+                        <i class="fas fa-phone me-2"></i> +56966895746
+                    </p>
+                </div>
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <h5>Curso</h5>
+                    <p>Chatgpt: Impulsa La Productividad Administrativa Y Analítica</p>
+                    <p><i class="fas fa-clock me-2"></i> Duración: 16 Horas</p>
+                </div>
+            </div>
+            <hr class="footer-divider">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <p class="mb-0">&copy; 2023 Instituto de capacitación Tecnipro. Todos los derechos reservados.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script>
+        /**
+         * Inicialización de componentes interactivos
+         * ------------------------------------------
+         * Configuración principal de elementos interactivos y comportamientos
+         */
+        document.addEventListener('DOMContentLoaded', function() {
+            // Inicialización de tooltips
+            const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+            const tooltipList = tooltipTriggerList.map(function(tooltipTriggerEl) {
+                return new bootstrap.Tooltip(tooltipTriggerEl, {
+                    container: 'body',
+                    trigger: 'hover focus',
+                    animation: true,
+                    html: true
+                });
+            });
+            
+            // Detección de elementos para animación al hacer scroll
+            const fadeElements = document.querySelectorAll('.fade-up');
+            
+            function checkFade() {
+                fadeElements.forEach(element => {
+                    const elementTop = element.getBoundingClientRect().top;
+                    const windowHeight = window.innerHeight;
+                    
+                    if (elementTop < windowHeight - 50) {
+                        element.classList.add('show');
+                    }
+                });
+            }
+            
+            // Event listeners
+            window.addEventListener('scroll', function() {
+                checkFade();
+            });
+            
+            // Inicialización para mostrar elementos visibles en carga inicial
+            checkFade();
+        });
+    </script>
+</body>
+</html>
